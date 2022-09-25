@@ -1,0 +1,27 @@
+# ninja log v5
+1	24	1663495339865867437	CMakeFiles/untitled.dir/DrawCell.cpp.o	263564cc506822f6
+1	301	1663610734727692957	CMakeFiles/untitled.dir/CommandReader.cpp.o	564ac679e7d6fec0
+2	368	1663795928522501453	CMakeFiles/untitled.dir/Reader.cpp.o	7519605144c8c2fa
+23	35	1663495339877867453	CMakeFiles/untitled.dir/Controller.cpp.o	aa444c15325050c0
+1	534	1663795928690502347	CMakeFiles/untitled.dir/main.cpp.o	12a0b8d79b0ec587
+2	568	1663795928722502518	CMakeFiles/untitled.dir/Play.cpp.o	3f717f116e1925a1
+1	28	1663797098776828675	build.ninja	c77b34d40bfc1ab1
+1	427	1663793542817461058	CMakeFiles/untitled.dir/Cell.cpp.o	f30f0c182b19b8f3
+1	411	1663795928566501687	CMakeFiles/untitled.dir/Game.cpp.o	80259932318325e2
+1	14	1663419702216547777	CMakeFiles/untitled.dir/Event_play.cpp.o	be2f8ec0eda6de5b
+1	571	1663795928726502539	CMakeFiles/untitled.dir/DrawField.cpp.o	4e3972ff3be689be
+748	813	1663795928966503817	untitled	49a11752bd04747e
+1	748	1663795928902503477	CMakeFiles/untitled.dir/Field.cpp.o	c4182420a16805fb
+1	403	1663696849985200432	CMakeFiles/untitled.dir/Player.cpp.o	b3428e6224f62def
+1	443	1663798698639243340	CMakeFiles/untitled.dir/Player.cpp.o	b3428e6224f62def
+1	572	1663798698767243788	CMakeFiles/untitled.dir/Game.cpp.o	80259932318325e2
+0	588	1663798698783243844	CMakeFiles/untitled.dir/main.cpp.o	12a0b8d79b0ec587
+589	602	1663798698799243901	CMakeFiles/untitled.dir/Event.cpp.o	d4520ab4a4770df7
+1	612	1663798698807243928	CMakeFiles/untitled.dir/DrawField.cpp.o	4e3972ff3be689be
+1	636	1663798698831244012	CMakeFiles/untitled.dir/Cell.cpp.o	f30f0c182b19b8f3
+1	650	1663798698847244068	CMakeFiles/untitled.dir/Field.cpp.o	c4182420a16805fb
+443	819	1663798699015244656	CMakeFiles/untitled.dir/Reader.cpp.o	7519605144c8c2fa
+572	945	1663798699139245091	CMakeFiles/untitled.dir/Play.cpp.o	3f717f116e1925a1
+945	1013	1663798699207245330	untitled	1dade87c01f9302d
+1	65	1663832342862422130	CMakeFiles/untitled.dir/main.cpp.o	12a0b8d79b0ec587
+66	192	1663832342986433076	untitled	1dade87c01f9302d
