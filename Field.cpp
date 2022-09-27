@@ -107,52 +107,25 @@ int Field::getWidth(){
     return this->width;
 }
 void Field::moveLeft(){
-    if (this->Player_pos_x - 1 < 0) {
-        if (this->cells[this->Player_pos_y][this->width - 1].getPossability()) {
-            this->Player_pos_x = this->width - 1;
-        }
+    if (this->cells[this->Player_pos_y][(this->Player_pos_x - 1 + this->width) % this->width].getPossability()) {
+        this->Player_pos_x = (this->Player_pos_x - 1 + this->width) % this->width;
     }
-    else{
-        if(this->cells[this->Player_pos_y][this->Player_pos_x - 1].getPossability()){
-            this->Player_pos_x = this->Player_pos_x - 1;
-        }
-    }
+}
 
-}
-void Field::moveRight(){
-    if (this->Player_pos_x + 1 > this->width) {
-        if (this->cells[this->Player_pos_y][0].getPossability()) {
-            this->Player_pos_x = 0;
-        }
-    }
-    else{
-        if(this->cells[this->Player_pos_y][this->Player_pos_x + 1].getPossability()){
-            this->Player_pos_x = this->Player_pos_x + 1;
-        }
+void Field::moveRight() {
+    if (this->cells[this->Player_pos_y][(this->Player_pos_x + 1) % this->width].getPossability()) {
+        this->Player_pos_x = (this->Player_pos_x + 1) % this->width;
     }
 }
+
 void Field::moveUp(){
-    if (this->Player_pos_y - 1 < 0) {
-        if (this->cells[this->height-1][this->Player_pos_x].getPossability()) {
-            this->Player_pos_y = this->height - 1;
-        }
-    }
-    else{
-        if(this->cells[this->Player_pos_y - 1][this->Player_pos_x].getPossability()){
-            this->Player_pos_y = this->Player_pos_y -1;
-        }
+    if (this->cells[(this->Player_pos_y - 1 + this->height) % this->height ][this->Player_pos_x].getPossability()) {
+        this->Player_pos_y = (this->Player_pos_y - 1 + this->height) % this->height;
     }
 }
 void Field::moveDown(){
-    if (this->Player_pos_y + 1 > this->height) {
-        if (this->cells[0][this->Player_pos_x].getPossability()) {
-            this->Player_pos_y = 0;
-        }
-    }
-    else{
-        if(this->cells[this->Player_pos_y + 1][this->Player_pos_x].getPossability()){
-            this->Player_pos_y = this->Player_pos_y + 1;
-        }
+    if (this->cells[(this->Player_pos_y + 1) % this->height][this->Player_pos_x].getPossability()) {
+        this->Player_pos_y = (this->Player_pos_y + 1) % this->height;
     }
 }
 int Field::getPlayer_pos_x() {
