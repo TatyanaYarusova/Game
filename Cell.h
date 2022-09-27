@@ -6,6 +6,7 @@
 #define UNTITLED_CELL_H
 #include <SFML/Graphics.hpp>
 #include "Event.h"
+#include "DrawCell.h"
 
 class Cell {
 private:
@@ -13,13 +14,9 @@ private:
     int y;
     bool is_passability;
     int count_sand;
-    sf::RectangleShape draw_cell; //Графическое представление клетки
-    Event value; // реализовать позже (колодец, деталь, взлетная площадка, укрытие)
+    DrawCell drawer;
 
-    std::string Filename;
-    sf::Image image;
-    sf::Texture* texture;
-    sf::Sprite map;
+    Event value; // реализовать позже (колодец, деталь, взлетная площадка, укрытие)
 public:
         Cell(int x, int y, bool pos, int count);
         sf::RectangleShape getCell();
@@ -27,8 +24,8 @@ public:
         bool getPossability();
         int getCountSand();
         void setCountSand();
-        void Color_update();
         sf::Sprite getSprite();
+        void Color_update();
         void Color_update_2();
 
 };

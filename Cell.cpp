@@ -4,29 +4,16 @@
 
 #include "Cell.h"
 
-Cell::Cell(int x, int y, bool pos, int count):x(x), y(y), is_passability(pos), count_sand(count){
-    this->draw_cell.setSize(sf::Vector2f(100, 100));
-    this->draw_cell.setFillColor(sf::Color::Green);// поменять цвет
-    this->draw_cell.setOutlineThickness(5);
-    this->draw_cell.setOutlineColor(sf::Color::Black);
-    this->draw_cell.setPosition(this->x, this->y);
-
-    this->Filename = "/home/tatyana/oop/game/map_2.png";
-}
+Cell::Cell(int x, int y, bool pos, int count):x(x), y(y), is_passability(pos), count_sand(count){}
 
 sf::RectangleShape Cell::getCell() {
-    return draw_cell;
+    return this->drawer.draw(this->x, this->y);
 }
 void Cell::setPossability(bool pos) {
     this->is_passability = pos;
-    this->image.loadFromFile(Filename);
-    this->texture = new sf::Texture;
-    this->texture->loadFromImage(this->image);
-    this->map.setTexture(*this->texture);
-    this->map.setTextureRect(sf::IntRect(0, 0, 100, 100));
-    this->map.setPosition(this->x, this->y);
-    //this->draw_cell.setFillColor(sf::Color::Red);
+    drawer.draw_close(this->x, this->y);
 }
+
 bool Cell::getPossability() {
     return this->is_passability;
 }
@@ -38,15 +25,16 @@ int Cell::getCountSand() {
 void Cell::setCountSand() {
     this->count_sand++;
 }
-void Cell::Color_update() {
-    this->draw_cell.setFillColor(sf::Color::Yellow);
-}
-void Cell::Color_update_2() {
-    this->draw_cell.setFillColor(sf::Color::Green);
-}
 
 sf::Sprite Cell::getSprite() {
-    return map;
+    return drawer.getSpriteDraw();
+}
+
+void Cell::Color_update() {
+    drawer.update_1();
+}
+void Cell::Color_update_2() {
+    drawer.update_2();
 }
 
 
