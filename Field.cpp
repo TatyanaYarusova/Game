@@ -1,136 +1,116 @@
-//
-// Created by tatyana on 17.09.22.
-//
-
 #include "Field.h"
 #include <iostream>
 
-Field::Field(){
-    this->height = 5;
-    this->width = 5;
-    this->side_cell = 100;
-
-
-    for(int m = 0; m < height; m++){
-        this->cells.push_back(std::vector<Cell>());
-        for(int n = 0; n < width; n++){
-            this->cells[m].push_back(Cell(n * this->side_cell, m * this->side_cell, true, 0));
-        }
-    }
-    this->cells[2][2].setPossability(false); // Закрываю клетки
-    this->cells[1][3].setPossability(false);
-    this->cells[4][4].setPossability(false);
-}
+Field::Field() : Field(7, 7) {}
 
 Field::Field(int height, int width) {
-
     if ((width != height) or (width % 2 == 0)) {
         std::cout << "Ошибка!";
         exit(0); // предложить переввести данные(Реализовать позже)
     }
 
-        this->Player_pos_x = 0;
-        this->Player_pos_y = 0;
-        this->side_cell = 100;
-        this->height = height;
-        this->width = width;
+    this->player_pos_x = 0;
+    this->player_pos_y = 0;
+    this->side_cell = 100;
+    this->height = height;
+    this->width = width;
 
-
-        for (int m = 0; m < height; m++) {
-            this->cells.push_back(std::vector<Cell>());
-            for (int n = 0; n < width; n++) {
-                this->cells[m].push_back(Cell(n * this->side_cell, m * this->side_cell, true, 0));
-            }
-        }
-        this->cells[2][2].setPossability(false); // Закрываю клетки
-        this->cells[1][3].setPossability(false);
-        this->cells[4][4].setPossability(false);
-        this->cells[5][1].setPossability(false);
-        this->cells[6][6].setPossability(false);
-
-
-}
-Field::Field(Field& other):height(other.height),width(other.width),side_cell(other.side_cell),Player_pos_x(other.Player_pos_x),Player_pos_y(other.Player_pos_y){
-    for (int i=0;i<height;i++) {
-        std::vector <Cell> string_cells;
-        for (int j = 0; j < width; j++) {
-            string_cells.push_back(other.cells[i][j]);
-        }
-        cells.push_back(string_cells);
+    this->cells.resize(height);
+    for (int m = 0; m < height; m++) {
+        this->cells[m].resize(width);
     }
+
+    this->cells[2][2].setPassability(false); // Закрываю клетки
+    this->cells[1][3].setPassability(false);
+    this->cells[4][4].setPassability(false);
+    this->cells[5][1].setPassability(false);
+    this->cells[6][6].setPassability(false);
 }
-Field&Field::operator=(const Field &field){
-    if (this!=&field) {
-        for (int i = 0; i < height; i++)
-            cells[i].clear();
-        cells.clear();
-        width= field.width;
-        height=field.height;
-        side_cell=field.side_cell;
-        Player_pos_x=field.Player_pos_x;
-        Player_pos_y=field.Player_pos_y;
+
+Field::Field(const Field& other) : height(other.height), width(other.width), side_cell(other.side_cell),
+                                   player_pos_x(other.player_pos_x), player_pos_y(other.player_pos_y),
+                                   cells(other.cells) {}
+
+Field& Field::operator=(const Field& field) {
+    if (this != &field) {
+        width = field.width;
         height = field.height;
-        for (int i = 0; i < field.height; i++)
-            for (int j = 0; j < field.width;j++)
-                cells[i][j] = field.cells[i][j];
-    }
-    return *this;
-}
-Field::Field(Field&& other){
-    std::swap(width,other.width);
-    std::swap(side_cell,other.side_cell);
-    std::swap(height,other.height);
-    std::swap(Player_pos_y,other.Player_pos_y);
-    std::swap(Player_pos_x,other.Player_pos_x);
-    std::swap(cells,other.cells);
-}
-Field& Field:: operator=(Field&& field){
-    if (this!=&field) {
-        std::swap(cells, field.cells);
-        std::swap(width, field.width);
-        std::swap(height, field.height);
-        std::swap(cells,field.cells);
-        std::swap(Player_pos_x,field.Player_pos_x);
-        std::swap(Player_pos_y,field.Player_pos_y);
+        side_cell = field.side_cell;
+        player_pos_x = field.player_pos_x;
+        player_pos_y = field.player_pos_y;
+        height = field.height;
+        cells = field.cells;
     }
     return *this;
 }
 
-std::vector<std::vector<Cell>> &Field::getCells() {
-    return cells;
+Field::Field(Field&& other) noexcept: width(other.width), side_cell(other.side_cell), height(other.height),
+                                      player_pos_y(other.player_pos_y), player_pos_x(other.player_pos_x),
+                                      cells(std::move(other.cells)) {
+    other.width = 0;
+    other.height = 0;
+    other.side_cell = 0;
+    other.player_pos_x = 0;
+    other.player_pos_y = 0;
 }
 
-int Field::getHeight(){
+Field& Field::operator=(Field&& field) noexcept {
+    if (this != &field) {
+        Field temp{std::move(field)};
+        std::swap(cells, temp.cells);
+        std::swap(width, temp.width);
+        std::swap(height, temp.height);
+        std::swap(cells, temp.cells);
+        std::swap(player_pos_x, temp.player_pos_x);
+        std::swap(player_pos_y, temp.player_pos_y);
+    }
+    return *this;
+}
+
+int Field::getHeight() const {
     return this->height;
 }
-int Field::getWidth(){
+
+int Field::getWidth() const {
     return this->width;
 }
-void Field::moveLeft(){
-    if (this->cells[this->Player_pos_y][(this->Player_pos_x - 1 + this->width) % this->width].getPossability()) {
-        this->Player_pos_x = (this->Player_pos_x - 1 + this->width) % this->width;
+
+// TODO: extract move logic to separate controller
+
+void Field::moveLeft() {
+    if (this->cells[this->player_pos_y][(this->player_pos_x - 1 + this->width) % this->width].getPassability()) {
+        this->player_pos_x = (this->player_pos_x - 1 + this->width) % this->width;
     }
 }
 
 void Field::moveRight() {
-    if (this->cells[this->Player_pos_y][(this->Player_pos_x + 1) % this->width].getPossability()) {
-        this->Player_pos_x = (this->Player_pos_x + 1) % this->width;
+    if (this->cells[this->player_pos_y][(this->player_pos_x + 1) % this->width].getPassability()) {
+        this->player_pos_x = (this->player_pos_x + 1) % this->width;
     }
 }
 
-void Field::moveUp(){
-    if (this->cells[(this->Player_pos_y - 1 + this->height) % this->height ][this->Player_pos_x].getPossability()) {
-        this->Player_pos_y = (this->Player_pos_y - 1 + this->height) % this->height;
+void Field::moveUp() {
+    if (this->cells[(this->player_pos_y - 1 + this->height) % this->height][this->player_pos_x].getPassability()) {
+        this->player_pos_y = (this->player_pos_y - 1 + this->height) % this->height;
     }
 }
-void Field::moveDown(){
-    if (this->cells[(this->Player_pos_y + 1) % this->height][this->Player_pos_x].getPossability()) {
-        this->Player_pos_y = (this->Player_pos_y + 1) % this->height;
+
+void Field::moveDown() {
+    if (this->cells[(this->player_pos_y + 1) % this->height][this->player_pos_x].getPassability()) {
+        this->player_pos_y = (this->player_pos_y + 1) % this->height;
     }
 }
-int Field::getPlayer_pos_x() {
-    return this->Player_pos_x;
+
+int Field::getPlayerPosX() const {
+    return this->player_pos_x;
 }
-int Field::getPlayer_pos_y() {
-    return this->Player_pos_y;
+
+int Field::getPlayerPosY() const {
+    return this->player_pos_y;
+}
+
+Cell Field::getCell(int x, int y) {
+    if (x < 0 && x >= width && y < 0 && y >= height)
+        return Cell{};
+    return cells[y][x];
 }

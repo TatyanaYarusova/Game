@@ -1,40 +1,27 @@
-//
-// Created by tatyana on 18.09.22.
-//
-
 #include "DrawCell.h"
 
+DrawCell::DrawCell() : texture_cell(new sf::Texture) {
+    std::string filename = "/home/tatyana/oop/game/map_2.png";
+    sf::Image image_cell{};
+    image_cell.loadFromFile(filename);
+    texture_cell->loadFromImage(image_cell);
 
-sf::RectangleShape DrawCell::draw(int x, int y) {
-    this->cell.setSize(sf::Vector2f(100, 100));
-    this->cell.setFillColor(sf::Color::Green);// поменять цвет
-    this->cell.setOutlineThickness(5);
-    this->cell.setOutlineColor(sf::Color::Black);
-    this->cell.setPosition(x, y);
-    return  cell;
+    cell.setSize(sf::Vector2f((float) cell_size, (float) cell_size));
+    cell.setFillColor(sf::Color::Green);// поменять цвет
+    cell.setOutlineThickness(5);
+    cell.setOutlineColor(sf::Color::Black);
+
+    sprite_cell.setTexture(*texture_cell);
+    sprite_cell.setTextureRect(sf::IntRect(0, 0, cell_texture_size, cell_texture_size));
 }
 
-
-void DrawCell::draw_close(int x, int y) {
-    this->Filename = "/home/tatyana/oop/game/map_2.png";
-    this->image_cell.loadFromFile(Filename);
-    this->texture_cell = new sf::Texture;
-    this->texture_cell->loadFromImage(this->image_cell);
-    this->sprite_cell.setTexture(*this->texture_cell);
-    this->sprite_cell.setTextureRect(sf::IntRect(0, 0, 100, 100));
-    this->sprite_cell.setPosition(x, y);
-
+sf::RectangleShape DrawCell::draw(int x, int y, bool player) {
+    cell.setFillColor(player ? sf::Color::Yellow : sf::Color::Green);
+    cell.setPosition((float) (x * cell_size), (float) (y * cell_size));
+    return cell;
 }
 
-void DrawCell::update_2() {
-    this->cell.setFillColor(sf::Color::Blue);
-
+sf::Sprite DrawCell::drawClose(int x, int y) {
+    sprite_cell.setPosition((float) (x * cell_size), (float) (y * cell_size));
+    return sprite_cell;
 }
-
-void DrawCell::update_1() {
-    this->cell.setFillColor(sf::Color::Yellow);
-}
-sf::Sprite DrawCell::getSpriteDraw(){
-    return this->sprite_cell;
-}
-

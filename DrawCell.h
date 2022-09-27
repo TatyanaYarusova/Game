@@ -1,25 +1,21 @@
-//
-// Created by tatyana on 18.09.22.
-//
-
 #ifndef UNTITLED_DRAWCELL_H
 #define UNTITLED_DRAWCELL_H
-#include <SFML/Graphics.hpp>
 
+#include <SFML/Graphics.hpp>
 
 class DrawCell {
 private:
-    sf::RectangleShape cell;
-    std::string Filename;
-    sf::Image image_cell;
+    const int cell_texture_size = 100;
+    const int cell_size = 100;
+
     sf::Texture* texture_cell;
-    sf::Sprite sprite_cell ;
+
+    sf::RectangleShape cell;
+    sf::Sprite sprite_cell;
 public:
-    sf::RectangleShape draw(int, int);
-    void draw_close(int, int);
-    void update_1();
-    void update_2();
-    sf::Sprite getSpriteDraw();
+    explicit DrawCell();
+    sf::RectangleShape draw(int x, int y, bool player = false);
+    sf::Sprite drawClose(int x, int y);
 };
 
 
