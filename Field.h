@@ -27,7 +27,10 @@ public:
     std::vector<std::vector<Cell>>& getCells();
     int getHeight();
     int getWidth();
-    void move(int, int);
+    void moveUp();
+    void moveDown();
+    void moveRight();
+    void moveLeft();
     int getPlayer_pos_x();
     int getPlayer_pos_y();
 };

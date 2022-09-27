@@ -106,34 +106,54 @@ int Field::getHeight(){
 int Field::getWidth(){
     return this->width;
 }
-void Field::move(int dx, int dy){
-    this->cells[Player_pos_y][Player_pos_x].Color_update_2();
-    if(dy == 0) {
-        if (this->Player_pos_x + dx < 0) {
-            if (this->cells[this->Player_pos_y][this->width - 1].getPossability()) {
-                this->Player_pos_x = this->width - 1;
-            }
-        }
-        else{
-            if(this->cells[this->Player_pos_y][(this->Player_pos_x + dx) % this->width].getPossability()){
-                this->Player_pos_x = (this->Player_pos_x + dx) % this->width;
-            }
+void Field::moveLeft(){
+    if (this->Player_pos_x - 1 < 0) {
+        if (this->cells[this->Player_pos_y][this->width - 1].getPossability()) {
+            this->Player_pos_x = this->width - 1;
         }
     }
     else{
-        if (this->Player_pos_y + dy < 0) {
-            if (this->cells[this->height-1][this->Player_pos_x].getPossability()) {
-                this->Player_pos_y = this->height - 1;
-            }
+        if(this->cells[this->Player_pos_y][this->Player_pos_x - 1].getPossability()){
+            this->Player_pos_x = this->Player_pos_x - 1;
         }
-        else{
-            if(this->cells[(this->Player_pos_y + dy) % this->height][this->Player_pos_x].getPossability()){
-                this->Player_pos_y = (this->Player_pos_y + dy) % this->height;
-            }
-        }
-
     }
-    this->cells[Player_pos_y][Player_pos_x].Color_update();
+
+}
+void Field::moveRight(){
+    if (this->Player_pos_x + 1 > this->width) {
+        if (this->cells[this->Player_pos_y][0].getPossability()) {
+            this->Player_pos_x = 0;
+        }
+    }
+    else{
+        if(this->cells[this->Player_pos_y][this->Player_pos_x + 1].getPossability()){
+            this->Player_pos_x = this->Player_pos_x + 1;
+        }
+    }
+}
+void Field::moveUp(){
+    if (this->Player_pos_y - 1 < 0) {
+        if (this->cells[this->height-1][this->Player_pos_x].getPossability()) {
+            this->Player_pos_y = this->height - 1;
+        }
+    }
+    else{
+        if(this->cells[this->Player_pos_y - 1][this->Player_pos_x].getPossability()){
+            this->Player_pos_y = this->Player_pos_y -1;
+        }
+    }
+}
+void Field::moveDown(){
+    if (this->Player_pos_y + 1 > this->height) {
+        if (this->cells[0][this->Player_pos_x].getPossability()) {
+            this->Player_pos_y = 0;
+        }
+    }
+    else{
+        if(this->cells[this->Player_pos_y + 1][this->Player_pos_x].getPossability()){
+            this->Player_pos_y = this->Player_pos_y + 1;
+        }
+    }
 }
 int Field::getPlayer_pos_x() {
     return this->Player_pos_x;
