@@ -2,8 +2,8 @@
 #define UNTITLED_PLAY_H
 
 #include <SFML/Graphics.hpp>
-#include "Player.h"
-#include "Field.h"
+#include "Game_Logic/header/Field.h"
+#include "Game_Logic/header/Player.h"
 
 class Play {
 public:

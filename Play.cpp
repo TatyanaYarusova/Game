@@ -6,7 +6,7 @@
 #include <SFML/Graphics.hpp>
 
 void Play::play(sf::Event event, Field& map, Player& player) {
-    if(event.type == sf::Event::KeyReleased) {
+    if(event.type == sf::Event::KeyPressed) {
 
         if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) or (sf::Keyboard::isKeyPressed(sf::Keyboard::A))){
             map.moveLeft();
