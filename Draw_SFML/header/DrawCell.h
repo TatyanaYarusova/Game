@@ -13,7 +13,7 @@ private:
     sf::RectangleShape cell;
     sf::Sprite sprite_cell;
 public:
-    explicit DrawCell();
+    DrawCell();
     sf::RectangleShape draw(int x, int y, bool player = false);
     sf::Sprite drawClose(int x, int y);
 };

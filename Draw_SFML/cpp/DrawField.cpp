@@ -11,7 +11,8 @@ void DrawField::draw(Field& map, sf::RenderWindow& window) {
             }
         }
     }
-    auto player_x = map.getPlayerPosX();
-    auto player_y = map.getPlayerPosY();
+    auto player_x = map.getPlayerPos().x;
+    auto player_y = map.getPlayerPos().y;
+    window.draw(*drawPlayer.getSprite(player_x, player_y));
     window.draw(drawCell.draw(player_x, player_y, true));
 }

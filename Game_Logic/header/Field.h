@@ -3,6 +3,7 @@
 
 #include <vector>
 #include "Cell.h"
+#include "../../Point.h"
 
 
 class Field {
@@ -11,8 +12,7 @@ class Field {
     int width;
     int side_cell;
     std::vector<std::vector<Cell>> cells;
-    int player_pos_x;
-    int player_pos_y;
+    Point player_pos;
 
 public:
     Field();
@@ -28,8 +28,8 @@ public:
     void moveDown();
     void moveRight();
     void moveLeft();
-    int getPlayerPosX() const;
-    int getPlayerPosY() const;
+    Point getPlayerPos() const;
+    void setPlayerPos(int, int);
 };
 
 #endif //UNTITLED_FIELD_H

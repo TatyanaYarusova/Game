@@ -12,8 +12,6 @@ DrawCell::DrawCell() : texture_cell(new sf::Texture) {
     cell.setFillColor(sf::Color::Green);// поменять цвет
     cell.setOutlineThickness(5);
     cell.setOutlineColor(sf::Color::Black);
-
-
 }
 
 sf::RectangleShape DrawCell::draw(int x, int y, bool player) {

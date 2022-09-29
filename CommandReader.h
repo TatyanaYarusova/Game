@@ -1,9 +1,6 @@
-//
-// Created by tatyana on 18.09.22.
-//
-
 #ifndef UNTITLED_COMMANDREADER_H
 #define UNTITLED_COMMANDREADER_H
+
 #include <iostream>
 
 class CommandReader{

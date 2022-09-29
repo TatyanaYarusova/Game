@@ -1,16 +1,23 @@
 #include "../header/Game.h"
-#include "../../Game_Logic/header/Reader.h"
-#include "../../Play.h"
+#include "../../Input/header/Reader.h"
+#include "../../Input/header/KeyboardReader.h"
 #include "../header/DrawField.h"
+#include "../../Game_Logic/header/PlayerController.h"
+#include "../../Input/header/GameController.h"
 #include <SFML/Graphics.hpp>
 
 void Game::start() {
-    Reader reader{};
+    InputMediator mediator;
+    GameController gameController;
+    mediator.addController(&gameController);
+    KeyboardReader play{&mediator};
+    Reader reader{&mediator};
     reader.read();
 
-    Play play;
-    Field map(reader.getHeight(), reader.getHeight());
-    Player player(reader.getRole());
+    Field map(gameController.getWidth(), gameController.getHeight());
+    Player player(gameController.getRole());
+    PlayerController playerController{&map};
+    mediator.addController(&playerController);
     DrawField draw_map;
 
     sf::RenderWindow window(sf::VideoMode(800, 800), "Game");
@@ -26,10 +33,9 @@ void Game::start() {
 
         draw_map.draw(map, window);
 
-        window.draw(*player.getPlayer());
         window.display();
 
-        play.play(event, map, player);
+        play.process(event);
     }
 
 }

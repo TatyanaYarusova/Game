@@ -49,26 +49,14 @@ cmake_ninja_workdir = /home/tatyana/CLionProjects/Game/cmake-build-debug/
 
 build cmake_object_order_depends_target_Game: phony || CMakeFiles/Game.dir
 
-build CMakeFiles/Game.dir/Controller.cpp.o: CXX_COMPILER__Game_Debug /home/tatyana/CLionProjects/Game/Controller.cpp || cmake_object_order_depends_target_Game
-  DEP_FILE = CMakeFiles/Game.dir/Controller.cpp.o.d
+build CMakeFiles/Game.dir/Input/cpp/KeyboardReader.cpp.o: CXX_COMPILER__Game_Debug /home/tatyana/CLionProjects/Game/Input/cpp/KeyboardReader.cpp || cmake_object_order_depends_target_Game
+  DEP_FILE = CMakeFiles/Game.dir/Input/cpp/KeyboardReader.cpp.o.d
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/Game.dir
-  OBJECT_FILE_DIR = CMakeFiles/Game.dir
-
-build CMakeFiles/Game.dir/Play.cpp.o: CXX_COMPILER__Game_Debug /home/tatyana/CLionProjects/Game/Play.cpp || cmake_object_order_depends_target_Game
-  DEP_FILE = CMakeFiles/Game.dir/Play.cpp.o.d
-  FLAGS = -g
-  OBJECT_DIR = CMakeFiles/Game.dir
-  OBJECT_FILE_DIR = CMakeFiles/Game.dir
+  OBJECT_FILE_DIR = CMakeFiles/Game.dir/Input/cpp
 
 build CMakeFiles/Game.dir/Event.cpp.o: CXX_COMPILER__Game_Debug /home/tatyana/CLionProjects/Game/Event.cpp || cmake_object_order_depends_target_Game
   DEP_FILE = CMakeFiles/Game.dir/Event.cpp.o.d
-  FLAGS = -g
-  OBJECT_DIR = CMakeFiles/Game.dir
-  OBJECT_FILE_DIR = CMakeFiles/Game.dir
-
-build CMakeFiles/Game.dir/Mediator.cpp.o: CXX_COMPILER__Game_Debug /home/tatyana/CLionProjects/Game/Mediator.cpp || cmake_object_order_depends_target_Game
-  DEP_FILE = CMakeFiles/Game.dir/Mediator.cpp.o.d
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/Game.dir
   OBJECT_FILE_DIR = CMakeFiles/Game.dir
@@ -109,11 +97,11 @@ build CMakeFiles/Game.dir/Game_Logic/cpp/Cell.cpp.o: CXX_COMPILER__Game_Debug /h
   OBJECT_DIR = CMakeFiles/Game.dir
   OBJECT_FILE_DIR = CMakeFiles/Game.dir/Game_Logic/cpp
 
-build CMakeFiles/Game.dir/Game_Logic/cpp/Reader.cpp.o: CXX_COMPILER__Game_Debug /home/tatyana/CLionProjects/Game/Game_Logic/cpp/Reader.cpp || cmake_object_order_depends_target_Game
-  DEP_FILE = CMakeFiles/Game.dir/Game_Logic/cpp/Reader.cpp.o.d
+build CMakeFiles/Game.dir/Input/cpp/Reader.cpp.o: CXX_COMPILER__Game_Debug /home/tatyana/CLionProjects/Game/Input/cpp/Reader.cpp || cmake_object_order_depends_target_Game
+  DEP_FILE = CMakeFiles/Game.dir/Input/cpp/Reader.cpp.o.d
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/Game.dir
-  OBJECT_FILE_DIR = CMakeFiles/Game.dir/Game_Logic/cpp
+  OBJECT_FILE_DIR = CMakeFiles/Game.dir/Input/cpp
 
 build CMakeFiles/Game.dir/Draw_SFML/cpp/DrawField.cpp.o: CXX_COMPILER__Game_Debug /home/tatyana/CLionProjects/Game/Draw_SFML/cpp/DrawField.cpp || cmake_object_order_depends_target_Game
   DEP_FILE = CMakeFiles/Game.dir/Draw_SFML/cpp/DrawField.cpp.o.d
@@ -133,6 +121,30 @@ build CMakeFiles/Game.dir/Draw_SFML/cpp/DrawCell.cpp.o: CXX_COMPILER__Game_Debug
   OBJECT_DIR = CMakeFiles/Game.dir
   OBJECT_FILE_DIR = CMakeFiles/Game.dir/Draw_SFML/cpp
 
+build CMakeFiles/Game.dir/Input/cpp/InputMediator.cpp.o: CXX_COMPILER__Game_Debug /home/tatyana/CLionProjects/Game/Input/cpp/InputMediator.cpp || cmake_object_order_depends_target_Game
+  DEP_FILE = CMakeFiles/Game.dir/Input/cpp/InputMediator.cpp.o.d
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles/Game.dir
+  OBJECT_FILE_DIR = CMakeFiles/Game.dir/Input/cpp
+
+build CMakeFiles/Game.dir/Game_Logic/cpp/PlayerController.cpp.o: CXX_COMPILER__Game_Debug /home/tatyana/CLionProjects/Game/Game_Logic/cpp/PlayerController.cpp || cmake_object_order_depends_target_Game
+  DEP_FILE = CMakeFiles/Game.dir/Game_Logic/cpp/PlayerController.cpp.o.d
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles/Game.dir
+  OBJECT_FILE_DIR = CMakeFiles/Game.dir/Game_Logic/cpp
+
+build CMakeFiles/Game.dir/Draw_SFML/cpp/DrawPlayer.cpp.o: CXX_COMPILER__Game_Debug /home/tatyana/CLionProjects/Game/Draw_SFML/cpp/DrawPlayer.cpp || cmake_object_order_depends_target_Game
+  DEP_FILE = CMakeFiles/Game.dir/Draw_SFML/cpp/DrawPlayer.cpp.o.d
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles/Game.dir
+  OBJECT_FILE_DIR = CMakeFiles/Game.dir/Draw_SFML/cpp
+
+build CMakeFiles/Game.dir/Input/cpp/GameController.cpp.o: CXX_COMPILER__Game_Debug /home/tatyana/CLionProjects/Game/Input/cpp/GameController.cpp || cmake_object_order_depends_target_Game
+  DEP_FILE = CMakeFiles/Game.dir/Input/cpp/GameController.cpp.o.d
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles/Game.dir
+  OBJECT_FILE_DIR = CMakeFiles/Game.dir/Input/cpp
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Game
@@ -141,7 +153,7 @@ build CMakeFiles/Game.dir/Draw_SFML/cpp/DrawCell.cpp.o: CXX_COMPILER__Game_Debug
 #############################################
 # Link the executable Game
 
-build Game: CXX_EXECUTABLE_LINKER__Game_Debug CMakeFiles/Game.dir/Controller.cpp.o CMakeFiles/Game.dir/Play.cpp.o CMakeFiles/Game.dir/Event.cpp.o CMakeFiles/Game.dir/Mediator.cpp.o CMakeFiles/Game.dir/Event_play.cpp.o CMakeFiles/Game.dir/CommandReader.cpp.o CMakeFiles/Game.dir/Game_Logic/cpp/main.cpp.o CMakeFiles/Game.dir/Game_Logic/cpp/Field.cpp.o CMakeFiles/Game.dir/Game_Logic/cpp/Player.cpp.o CMakeFiles/Game.dir/Game_Logic/cpp/Cell.cpp.o CMakeFiles/Game.dir/Game_Logic/cpp/Reader.cpp.o CMakeFiles/Game.dir/Draw_SFML/cpp/DrawField.cpp.o CMakeFiles/Game.dir/Draw_SFML/cpp/Game.cpp.o CMakeFiles/Game.dir/Draw_SFML/cpp/DrawCell.cpp.o | /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
+build Game: CXX_EXECUTABLE_LINKER__Game_Debug CMakeFiles/Game.dir/Input/cpp/KeyboardReader.cpp.o CMakeFiles/Game.dir/Event.cpp.o CMakeFiles/Game.dir/Event_play.cpp.o CMakeFiles/Game.dir/CommandReader.cpp.o CMakeFiles/Game.dir/Game_Logic/cpp/main.cpp.o CMakeFiles/Game.dir/Game_Logic/cpp/Field.cpp.o CMakeFiles/Game.dir/Game_Logic/cpp/Player.cpp.o CMakeFiles/Game.dir/Game_Logic/cpp/Cell.cpp.o CMakeFiles/Game.dir/Input/cpp/Reader.cpp.o CMakeFiles/Game.dir/Draw_SFML/cpp/DrawField.cpp.o CMakeFiles/Game.dir/Draw_SFML/cpp/Game.cpp.o CMakeFiles/Game.dir/Draw_SFML/cpp/DrawCell.cpp.o CMakeFiles/Game.dir/Input/cpp/InputMediator.cpp.o CMakeFiles/Game.dir/Game_Logic/cpp/PlayerController.cpp.o CMakeFiles/Game.dir/Draw_SFML/cpp/DrawPlayer.cpp.o CMakeFiles/Game.dir/Input/cpp/GameController.cpp.o | /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
   FLAGS = -g
   LINK_LIBRARIES = /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1  /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1  /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1  /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
   OBJECT_DIR = CMakeFiles/Game.dir
