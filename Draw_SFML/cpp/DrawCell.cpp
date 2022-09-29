@@ -10,13 +10,13 @@ DrawCell::DrawCell() : texture_cell(new sf::Texture) {
 
     cell.setSize(sf::Vector2f((float) cell_size, (float) cell_size));
     cell.setFillColor(sf::Color::Green);// поменять цвет
-    cell.setOutlineThickness(5);
+    cell.setOutlineThickness(-3);
     cell.setOutlineColor(sf::Color::Black);
 }
 
 sf::RectangleShape DrawCell::draw(int x, int y, bool player) {
     cell.setFillColor(player ? sf::Color::Yellow : sf::Color::Green);
-    cell.setPosition((float) (x * cell_size), (float) (y * cell_size));
+    cell.setPosition((float) (x * cell_size ), (float) (y * cell_size));
     return cell;
 }
 

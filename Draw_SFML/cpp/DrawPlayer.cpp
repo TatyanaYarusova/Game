@@ -6,10 +6,8 @@
 DrawPlayer::DrawPlayer() {
     int height = 100;
     int width = 100;
-    std::string Filename = "/home/tatyana/oop/game/hero.png";
-    sf::Image heroim;
+    Filename = "/home/tatyana/oop/game/hero.png";
     heroim.loadFromFile(Filename);
-    sf::Texture herotex;
     herotex.loadFromImage(heroim);
     herosprite = new sf::Sprite;
     herosprite->setTexture(herotex);

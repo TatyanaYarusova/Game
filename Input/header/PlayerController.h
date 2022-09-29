@@ -1,9 +1,9 @@
 #ifndef GAME_PLAYERCONTROLLER_H
 #define GAME_PLAYERCONTROLLER_H
 
-#include "Player.h"
-#include "Field.h"
-#include "../../Input/header/IController.h"
+#include "../../Game_Logic/header/Player.h"
+#include "../../Game_Logic/header/Field.h"
+#include "IController.h"
 
 class PlayerController:public IController {
 private:

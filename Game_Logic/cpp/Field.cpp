@@ -23,8 +23,8 @@ Field::Field(int height, int width) {
     this->cells[2][2].setPassability(false); // Закрываю клетки
     this->cells[1][3].setPassability(false);
     this->cells[4][4].setPassability(false);
-    //this->cells[5][1].setPassability(false);
-    //this->cells[6][6].setPassability(false);
+    this->cells[5][1].setPassability(false);
+    this->cells[6][6].setPassability(false);
 }
 
 Field::Field(const Field& other) : height(other.height), width(other.width), side_cell(other.side_cell),

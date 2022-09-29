@@ -7,6 +7,9 @@
 
 class DrawPlayer  {
 private:
+    std::string Filename;
+    sf::Image heroim;
+    sf::Texture herotex;
     sf::Sprite* herosprite;
 public:
     DrawPlayer();

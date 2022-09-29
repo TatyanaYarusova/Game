@@ -12,5 +12,5 @@ void InputMediator::addController(IController* controller) {
 }
 
 void InputMediator::removeController(IController* controller) {
-    controllers.erase(std::remove(controllers.begin(), controllers.end(),controller)); // NOLINT(bugprone-inaccurate-erase)
+    controllers.erase(std::remove(controllers.begin(), controllers.end(),controller));
 }

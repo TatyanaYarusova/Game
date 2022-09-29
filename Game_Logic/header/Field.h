@@ -24,10 +24,6 @@ public:
     Cell getCell(int x, int y);
     int getHeight() const;
     int getWidth() const;
-    void moveUp();
-    void moveDown();
-    void moveRight();
-    void moveLeft();
     Point getPlayerPos() const;
     void setPlayerPos(int, int);
 };
