@@ -15,6 +15,7 @@ private:
 public:
     DrawCell();
     sf::RectangleShape draw(int x, int y, bool player = false);
+    sf::RectangleShape drawEvent(int x, int y);
     sf::Sprite drawClose(int x, int y);
 };
 

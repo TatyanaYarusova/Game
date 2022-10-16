@@ -1,4 +1,5 @@
 #include "../header/Field.h"
+#include "../../Event/header/SunEvent.h"
 #include <iostream>
 
 Field::Field() : Field(7, 7) {}
@@ -25,6 +26,7 @@ Field::Field(int height, int width) {
     this->cells[4][4].setPassability(false);
     this->cells[5][1].setPassability(false);
     this->cells[6][6].setPassability(false);
+
 }
 
 Field::Field(const Field& other) : height(other.height), width(other.width), side_cell(other.side_cell),
@@ -71,9 +73,9 @@ int Field::getWidth() const {
     return this->width;
 }
 
-Cell Field::getCell(int x, int y) {
-    if (x < 0 && x >= width && y < 0 && y >= height)
-        return Cell{};
+Cell& Field::getCell(int x, int y) {
+    //if (x < 0 && x >= width && y < 0 && y >= height)
+      //  return Cell{};
     return cells[y][x];
 }
 
@@ -85,3 +87,5 @@ void Field::setPlayerPos(int x, int y) {
     player_pos.x = x;
     player_pos.y = y;
 }
+
+

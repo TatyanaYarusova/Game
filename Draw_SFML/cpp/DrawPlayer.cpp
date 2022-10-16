@@ -17,6 +17,7 @@ DrawPlayer::DrawPlayer() {
 }
 
 sf::Sprite* DrawPlayer::getSprite(int x, int y) {
-    herosprite->setPosition(x * 100, y * 100);
+    herosprite->setPosition(x * (100 + 5), y * (100 + 5));
     return herosprite;
 }
+

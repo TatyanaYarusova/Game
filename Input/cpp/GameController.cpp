@@ -8,6 +8,10 @@ int GameController::getWidth() {
     return width;
 }
 
+int GameController::getRole() {
+    return role;
+}
+
 void GameController::getProcess(const InputMessage& message) {
     switch (message.command) {
         case InputCommand::SetPlayerRole:
@@ -26,6 +30,4 @@ void GameController::getProcess(const InputMessage& message) {
 
 }
 
-int GameController::getRole() {
-    return role;
-}
+

@@ -19,3 +19,19 @@ Player::Player(int name):role(name) {
     this->count_part = 0;
 }
 
+void Player::setCountPart() {
+    this->count_part++;
+}
+
+int Player::getCountPart() {
+    return this->count_part;
+}
+
+void Player::setWater(int water) {
+    this->water = water;
+}
+
+int Player::getWater() {
+    return this->water;
+}
+

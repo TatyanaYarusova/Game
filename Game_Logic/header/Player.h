@@ -10,6 +10,10 @@ private:
 
 public:
     Player(int name = 3);
+    void setCountPart();
+    int getCountPart();
+    void setWater(int);
+    int getWater();
     //1-
     //2-
     //3-Water Keeper

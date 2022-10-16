@@ -19,3 +19,14 @@ int Cell::getCountSand() {
 void Cell::setCountSand() {
     this->count_sand++;
 }
+
+void Cell::setEvent(IEvent* event) {
+    this->event = event;
+
+}
+
+IEvent* Cell::getEvent() {
+    return this->event;
+}
+
+

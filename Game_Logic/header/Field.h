@@ -3,6 +3,7 @@
 
 #include <vector>
 #include "Cell.h"
+
 #include "../../Point.h"
 
 
@@ -21,11 +22,12 @@ public:
     Field(Field&& other) noexcept;
     Field& operator=(Field&& field) noexcept;
     Field& operator=(const Field& field);
-    Cell getCell(int x, int y);
+    Cell& getCell(int x, int y);
     int getHeight() const;
     int getWidth() const;
     Point getPlayerPos() const;
     void setPlayerPos(int, int);
+
 };
 
 #endif //UNTITLED_FIELD_H
