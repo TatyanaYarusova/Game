@@ -2,6 +2,7 @@
 #define UNTITLED_DRAWCELL_H
 
 #include <SFML/Graphics.hpp>
+#include "DrawEvent.h"
 
 class DrawCell {
 private:
@@ -12,6 +13,7 @@ private:
 
     sf::RectangleShape cell;
     sf::Sprite sprite_cell;
+
 public:
     DrawCell();
     sf::RectangleShape draw(int x, int y, bool player = false);

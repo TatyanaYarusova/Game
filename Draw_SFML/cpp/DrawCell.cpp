@@ -21,7 +21,7 @@ sf::RectangleShape DrawCell::draw(int x, int y, bool player) {
 }
 
 sf::RectangleShape DrawCell::drawEvent(int x, int y){
-    cell.setFillColor(sf::Color::Blue);
+    cell.setFillColor(sf::Color::Black);
     cell.setPosition((float) (x * (cell_size + 5) ), (float) (y * (cell_size+5)));
     return cell;
 }

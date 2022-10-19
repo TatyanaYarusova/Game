@@ -1,3 +1,4 @@
+#include <iostream>
 #include "../header/Player.h"
 
 
@@ -29,6 +30,8 @@ int Player::getCountPart() {
 
 void Player::setWater(int water) {
     this->water = water;
+
+    this->notify();
 }
 
 int Player::getWater() {

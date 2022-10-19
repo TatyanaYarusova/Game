@@ -10,6 +10,7 @@ class DrawField {
 private:
     DrawCell drawCell;
     DrawPlayer drawPlayer;
+    DrawEvent drawEvent;
 public:
     void draw(Field& map, sf::RenderWindow& window);
 };

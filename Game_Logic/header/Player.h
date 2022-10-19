@@ -1,8 +1,9 @@
 #ifndef UNTITLED_PLAYER_H
 #define UNTITLED_PLAYER_H
 #include "SFML/Graphics.hpp"
+#include "Observable.h"
 
-class Player{
+class Player : public Observable{
 private:
     int water;
     int count_part;

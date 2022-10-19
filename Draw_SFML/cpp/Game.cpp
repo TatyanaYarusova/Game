@@ -9,6 +9,9 @@
 #include "../../Event/header/WellEvent.h"
 #include "../../Event/header/PartEvent.h"
 #include "../../Event/header/PlatfotmEvent.h"
+#include "../../Game_Logic/header/Status_game.h"
+#include "../../Game_Logic/header/Win.h"
+#include "../../Game_Logic/header/GameOver.h"
 #include <SFML/Graphics.hpp>
 
 void Game::start() {
@@ -28,6 +31,14 @@ void Game::start() {
     Field map(gameController.getWidth(), gameController.getHeight());
     Player player(gameController.getRole());
 
+    //create Observer
+    auto* status_game = new Status_game(true);
+    auto* win = new Win(&player);
+    auto* gameover = new GameOver(&player);
+    player.setObserver(gameover);
+    win->setObserver(status_game);
+    gameover->setObserver(status_game);
+
     //create playerController and add it in mediator
     PlayerController playerController{&map, &player};
     mediator.addController(&playerController);
@@ -41,6 +52,9 @@ void Game::start() {
     auto* well = new WellEvent(&player);
     auto* part = new PartEvent(&player);
     auto* platform = new PlatformEvent(&player);
+
+    platform->setObserver(win);
+
     map.getCell(3,2).setEvent(sun);
     map.getCell(3, 3).setEvent(well);
     map.getCell(4,5).setEvent(part);
@@ -49,7 +63,7 @@ void Game::start() {
 
     sf::RenderWindow window(sf::VideoMode(1000, 1000), "Game");
 
-    while (window.isOpen()) {
+    while (window.isOpen() and status_game->getValue()){
         sf::Event event{};
         while (window.pollEvent(event)) {
             if (event.type == sf::Event::Closed)
@@ -63,6 +77,9 @@ void Game::start() {
         window.display();
         //reading keyboard-event
         keyboardReader.process(event);
+
     }
+    window.close();
 
 }
+
