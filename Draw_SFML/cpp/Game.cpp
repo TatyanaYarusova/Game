@@ -12,6 +12,7 @@
 #include "../../Game_Logic/header/Status_game.h"
 #include "../../Game_Logic/header/Win.h"
 #include "../../Game_Logic/header/GameOver.h"
+#include "../../Event/header/StormMoveEvent.h"
 #include <SFML/Graphics.hpp>
 
 void Game::start() {
@@ -52,7 +53,7 @@ void Game::start() {
     auto* well = new WellEvent(&player);
     auto* part = new PartEvent(&player);
     auto* platform = new PlatformEvent(&player);
-
+    auto* stormmove = new StormMoveEvent(&map, &playerController);
     platform->setObserver(win);
 
     map.getCell(3,2).setEvent(sun);
@@ -60,6 +61,7 @@ void Game::start() {
     map.getCell(4,5).setEvent(part);
     map.getCell(1,6).setEvent(platform);
     map.getCell(1,0).setEvent(storm);
+    map.getCell(5,1).setEvent(stormmove);
 
     sf::RenderWindow window(sf::VideoMode(1000, 1000), "Game");
 
