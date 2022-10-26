@@ -2,7 +2,7 @@
 #define UNTITLED_GAME_H
 
 
-#include "../../Game_Logic/header/Player.h"
+#include "Player.h"
 
 class Game {
 public:

@@ -1,4 +1,4 @@
-#include "../../Draw_SFML/header/Game.h"
+#include "../header/Game.h"
 
 int main() {
     Game game;

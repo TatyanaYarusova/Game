@@ -7,3 +7,8 @@ void Observable::setObserver(Observer* observer) {
 void Observable::notify() {
     this->observer->update();
 }
+
+void Observable::notify_logger(Message message) {
+    this->observer->update
+
+}

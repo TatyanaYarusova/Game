@@ -6,6 +6,7 @@ void PlayerController::changeMap(Field* otherMap) {
 void PlayerController::callEvent(){
     if(this->map->getCell(map->getPlayerPos().x, map->getPlayerPos().y).getEvent()) {
         this->map->getCell(map->getPlayerPos().x, map->getPlayerPos().y).getEvent()->update();
+        //TODO логирование?
     }
 }
 void PlayerController::moveLeft() {

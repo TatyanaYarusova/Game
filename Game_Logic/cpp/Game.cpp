@@ -1,7 +1,7 @@
 #include "../header/Game.h"
 #include "../../Input/header/Reader.h"
 #include "../../Input/header/KeyboardReader.h"
-#include "../header/DrawField.h"
+#include "../../Draw_SFML/header/DrawField.h"
 #include "../../Input/header/PlayerController.h"
 #include "../../Input/header/GameController.h"
 #include "../../Event/header/StormEvent.h"
@@ -9,9 +9,9 @@
 #include "../../Event/header/WellEvent.h"
 #include "../../Event/header/PartEvent.h"
 #include "../../Event/header/PlatfotmEvent.h"
-#include "../../Game_Logic/header/Status_game.h"
-#include "../../Game_Logic/header/Win.h"
-#include "../../Game_Logic/header/GameOver.h"
+#include "../header/Status_game.h"
+#include "../header/Win.h"
+#include "../header/GameOver.h"
 #include "../../Event/header/StormMoveEvent.h"
 #include <SFML/Graphics.hpp>
 

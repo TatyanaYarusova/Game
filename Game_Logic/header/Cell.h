@@ -7,7 +7,7 @@ class Cell {
 private:
     bool is_passability;
     int count_sand;
-    IEvent* event = nullptr; // реализовать позже (колодец, деталь, взлетная площадка, укрытие)
+    IEvent* event = nullptr;
 public:
     Cell();
     Cell(bool is_passable, int count);

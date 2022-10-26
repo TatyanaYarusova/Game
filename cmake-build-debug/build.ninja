@@ -91,11 +91,11 @@ build CMakeFiles/Game.dir/Draw_SFML/cpp/DrawField.cpp.o: CXX_COMPILER__Game_Debu
   OBJECT_DIR = CMakeFiles/Game.dir
   OBJECT_FILE_DIR = CMakeFiles/Game.dir/Draw_SFML/cpp
 
-build CMakeFiles/Game.dir/Draw_SFML/cpp/Game.cpp.o: CXX_COMPILER__Game_Debug /home/tatyana/CLionProjects/Game/Draw_SFML/cpp/Game.cpp || cmake_object_order_depends_target_Game
-  DEP_FILE = CMakeFiles/Game.dir/Draw_SFML/cpp/Game.cpp.o.d
+build CMakeFiles/Game.dir/Game_Logic/cpp/Game.cpp.o: CXX_COMPILER__Game_Debug /home/tatyana/CLionProjects/Game/Game_Logic/cpp/Game.cpp || cmake_object_order_depends_target_Game
+  DEP_FILE = CMakeFiles/Game.dir/Game_Logic/cpp/Game.cpp.o.d
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/Game.dir
-  OBJECT_FILE_DIR = CMakeFiles/Game.dir/Draw_SFML/cpp
+  OBJECT_FILE_DIR = CMakeFiles/Game.dir/Game_Logic/cpp
 
 build CMakeFiles/Game.dir/Draw_SFML/cpp/DrawCell.cpp.o: CXX_COMPILER__Game_Debug /home/tatyana/CLionProjects/Game/Draw_SFML/cpp/DrawCell.cpp || cmake_object_order_depends_target_Game
   DEP_FILE = CMakeFiles/Game.dir/Draw_SFML/cpp/DrawCell.cpp.o.d
@@ -205,6 +205,72 @@ build CMakeFiles/Game.dir/Event/cpp/StormMoveEvent.cpp.o: CXX_COMPILER__Game_Deb
   OBJECT_DIR = CMakeFiles/Game.dir
   OBJECT_FILE_DIR = CMakeFiles/Game.dir/Event/cpp
 
+build CMakeFiles/Game.dir/Loger/Level/SLevel/cpp/SLevel.cpp.o: CXX_COMPILER__Game_Debug /home/tatyana/CLionProjects/Game/Loger/Level/SLevel/cpp/SLevel.cpp || cmake_object_order_depends_target_Game
+  DEP_FILE = CMakeFiles/Game.dir/Loger/Level/SLevel/cpp/SLevel.cpp.o.d
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles/Game.dir
+  OBJECT_FILE_DIR = CMakeFiles/Game.dir/Loger/Level/SLevel/cpp
+
+build CMakeFiles/Game.dir/Loger/Level/cpp/GLevel.cpp.o: CXX_COMPILER__Game_Debug /home/tatyana/CLionProjects/Game/Loger/Level/cpp/GLevel.cpp || cmake_object_order_depends_target_Game
+  DEP_FILE = CMakeFiles/Game.dir/Loger/Level/cpp/GLevel.cpp.o.d
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles/Game.dir
+  OBJECT_FILE_DIR = CMakeFiles/Game.dir/Loger/Level/cpp
+
+build CMakeFiles/Game.dir/Loger/Level/cpp/ELevel.cpp.o: CXX_COMPILER__Game_Debug /home/tatyana/CLionProjects/Game/Loger/Level/cpp/ELevel.cpp || cmake_object_order_depends_target_Game
+  DEP_FILE = CMakeFiles/Game.dir/Loger/Level/cpp/ELevel.cpp.o.d
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles/Game.dir
+  OBJECT_FILE_DIR = CMakeFiles/Game.dir/Loger/Level/cpp
+
+build CMakeFiles/Game.dir/Loger/cpp/FileLoger.cpp.o: CXX_COMPILER__Game_Debug /home/tatyana/CLionProjects/Game/Loger/cpp/FileLoger.cpp || cmake_object_order_depends_target_Game
+  DEP_FILE = CMakeFiles/Game.dir/Loger/cpp/FileLoger.cpp.o.d
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles/Game.dir
+  OBJECT_FILE_DIR = CMakeFiles/Game.dir/Loger/cpp
+
+build CMakeFiles/Game.dir/Loger/cpp/ConsoleLoger.cpp.o: CXX_COMPILER__Game_Debug /home/tatyana/CLionProjects/Game/Loger/cpp/ConsoleLoger.cpp || cmake_object_order_depends_target_Game
+  DEP_FILE = CMakeFiles/Game.dir/Loger/cpp/ConsoleLoger.cpp.o.d
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles/Game.dir
+  OBJECT_FILE_DIR = CMakeFiles/Game.dir/Loger/cpp
+
+build CMakeFiles/Game.dir/Loger/cpp/Adapter.cpp.o: CXX_COMPILER__Game_Debug /home/tatyana/CLionProjects/Game/Loger/cpp/Adapter.cpp || cmake_object_order_depends_target_Game
+  DEP_FILE = CMakeFiles/Game.dir/Loger/cpp/Adapter.cpp.o.d
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles/Game.dir
+  OBJECT_FILE_DIR = CMakeFiles/Game.dir/Loger/cpp
+
+build CMakeFiles/Game.dir/Loger/Level/SLevel/cpp/PlayingState.cpp.o: CXX_COMPILER__Game_Debug /home/tatyana/CLionProjects/Game/Loger/Level/SLevel/cpp/PlayingState.cpp || cmake_object_order_depends_target_Game
+  DEP_FILE = CMakeFiles/Game.dir/Loger/Level/SLevel/cpp/PlayingState.cpp.o.d
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles/Game.dir
+  OBJECT_FILE_DIR = CMakeFiles/Game.dir/Loger/Level/SLevel/cpp
+
+build CMakeFiles/Game.dir/Loger/Level/SLevel/cpp/WinState.cpp.o: CXX_COMPILER__Game_Debug /home/tatyana/CLionProjects/Game/Loger/Level/SLevel/cpp/WinState.cpp || cmake_object_order_depends_target_Game
+  DEP_FILE = CMakeFiles/Game.dir/Loger/Level/SLevel/cpp/WinState.cpp.o.d
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles/Game.dir
+  OBJECT_FILE_DIR = CMakeFiles/Game.dir/Loger/Level/SLevel/cpp
+
+build CMakeFiles/Game.dir/Loger/Level/SLevel/cpp/LossState.cpp.o: CXX_COMPILER__Game_Debug /home/tatyana/CLionProjects/Game/Loger/Level/SLevel/cpp/LossState.cpp || cmake_object_order_depends_target_Game
+  DEP_FILE = CMakeFiles/Game.dir/Loger/Level/SLevel/cpp/LossState.cpp.o.d
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles/Game.dir
+  OBJECT_FILE_DIR = CMakeFiles/Game.dir/Loger/Level/SLevel/cpp
+
+build CMakeFiles/Game.dir/Loger/Level/SLevel/cpp/SaveState.cpp.o: CXX_COMPILER__Game_Debug /home/tatyana/CLionProjects/Game/Loger/Level/SLevel/cpp/SaveState.cpp || cmake_object_order_depends_target_Game
+  DEP_FILE = CMakeFiles/Game.dir/Loger/Level/SLevel/cpp/SaveState.cpp.o.d
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles/Game.dir
+  OBJECT_FILE_DIR = CMakeFiles/Game.dir/Loger/Level/SLevel/cpp
+
+build CMakeFiles/Game.dir/Loger/cpp/Logger.cpp.o: CXX_COMPILER__Game_Debug /home/tatyana/CLionProjects/Game/Loger/cpp/Logger.cpp || cmake_object_order_depends_target_Game
+  DEP_FILE = CMakeFiles/Game.dir/Loger/cpp/Logger.cpp.o.d
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles/Game.dir
+  OBJECT_FILE_DIR = CMakeFiles/Game.dir/Loger/cpp
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Game
@@ -213,7 +279,7 @@ build CMakeFiles/Game.dir/Event/cpp/StormMoveEvent.cpp.o: CXX_COMPILER__Game_Deb
 #############################################
 # Link the executable Game
 
-build Game: CXX_EXECUTABLE_LINKER__Game_Debug CMakeFiles/Game.dir/Input/cpp/KeyboardReader.cpp.o CMakeFiles/Game.dir/Game_Logic/cpp/main.cpp.o CMakeFiles/Game.dir/Game_Logic/cpp/Field.cpp.o CMakeFiles/Game.dir/Game_Logic/cpp/Player.cpp.o CMakeFiles/Game.dir/Game_Logic/cpp/Cell.cpp.o CMakeFiles/Game.dir/Input/cpp/Reader.cpp.o CMakeFiles/Game.dir/Draw_SFML/cpp/DrawField.cpp.o CMakeFiles/Game.dir/Draw_SFML/cpp/Game.cpp.o CMakeFiles/Game.dir/Draw_SFML/cpp/DrawCell.cpp.o CMakeFiles/Game.dir/Input/cpp/InputMediator.cpp.o CMakeFiles/Game.dir/Input/cpp/PlayerController.cpp.o CMakeFiles/Game.dir/Draw_SFML/cpp/DrawPlayer.cpp.o CMakeFiles/Game.dir/Input/cpp/GameController.cpp.o CMakeFiles/Game.dir/Event/cpp/EffectOnField.cpp.o CMakeFiles/Game.dir/Event/cpp/EffectOnPlayer.cpp.o CMakeFiles/Game.dir/Event/cpp/WellEvent.cpp.o CMakeFiles/Game.dir/Event/cpp/SunEvent.cpp.o CMakeFiles/Game.dir/Event/cpp/PartEvent.cpp.o CMakeFiles/Game.dir/Event/cpp/StormEvent.cpp.o CMakeFiles/Game.dir/Event/cpp/PlatfotmEvent.cpp.o CMakeFiles/Game.dir/Game_Logic/cpp/Observable.cpp.o CMakeFiles/Game.dir/Game_Logic/cpp/Status_game.cpp.o CMakeFiles/Game.dir/Draw_SFML/cpp/DrawEvent.cpp.o CMakeFiles/Game.dir/Game_Logic/cpp/Win.cpp.o CMakeFiles/Game.dir/Game_Logic/cpp/GameOver.cpp.o CMakeFiles/Game.dir/Event/cpp/StormMoveEvent.cpp.o | /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
+build Game: CXX_EXECUTABLE_LINKER__Game_Debug CMakeFiles/Game.dir/Input/cpp/KeyboardReader.cpp.o CMakeFiles/Game.dir/Game_Logic/cpp/main.cpp.o CMakeFiles/Game.dir/Game_Logic/cpp/Field.cpp.o CMakeFiles/Game.dir/Game_Logic/cpp/Player.cpp.o CMakeFiles/Game.dir/Game_Logic/cpp/Cell.cpp.o CMakeFiles/Game.dir/Input/cpp/Reader.cpp.o CMakeFiles/Game.dir/Draw_SFML/cpp/DrawField.cpp.o CMakeFiles/Game.dir/Game_Logic/cpp/Game.cpp.o CMakeFiles/Game.dir/Draw_SFML/cpp/DrawCell.cpp.o CMakeFiles/Game.dir/Input/cpp/InputMediator.cpp.o CMakeFiles/Game.dir/Input/cpp/PlayerController.cpp.o CMakeFiles/Game.dir/Draw_SFML/cpp/DrawPlayer.cpp.o CMakeFiles/Game.dir/Input/cpp/GameController.cpp.o CMakeFiles/Game.dir/Event/cpp/EffectOnField.cpp.o CMakeFiles/Game.dir/Event/cpp/EffectOnPlayer.cpp.o CMakeFiles/Game.dir/Event/cpp/WellEvent.cpp.o CMakeFiles/Game.dir/Event/cpp/SunEvent.cpp.o CMakeFiles/Game.dir/Event/cpp/PartEvent.cpp.o CMakeFiles/Game.dir/Event/cpp/StormEvent.cpp.o CMakeFiles/Game.dir/Event/cpp/PlatfotmEvent.cpp.o CMakeFiles/Game.dir/Game_Logic/cpp/Observable.cpp.o CMakeFiles/Game.dir/Game_Logic/cpp/Status_game.cpp.o CMakeFiles/Game.dir/Draw_SFML/cpp/DrawEvent.cpp.o CMakeFiles/Game.dir/Game_Logic/cpp/Win.cpp.o CMakeFiles/Game.dir/Game_Logic/cpp/GameOver.cpp.o CMakeFiles/Game.dir/Event/cpp/StormMoveEvent.cpp.o CMakeFiles/Game.dir/Loger/Level/SLevel/cpp/SLevel.cpp.o CMakeFiles/Game.dir/Loger/Level/cpp/GLevel.cpp.o CMakeFiles/Game.dir/Loger/Level/cpp/ELevel.cpp.o CMakeFiles/Game.dir/Loger/cpp/FileLoger.cpp.o CMakeFiles/Game.dir/Loger/cpp/ConsoleLoger.cpp.o CMakeFiles/Game.dir/Loger/cpp/Adapter.cpp.o CMakeFiles/Game.dir/Loger/Level/SLevel/cpp/PlayingState.cpp.o CMakeFiles/Game.dir/Loger/Level/SLevel/cpp/WinState.cpp.o CMakeFiles/Game.dir/Loger/Level/SLevel/cpp/LossState.cpp.o CMakeFiles/Game.dir/Loger/Level/SLevel/cpp/SaveState.cpp.o CMakeFiles/Game.dir/Loger/cpp/Logger.cpp.o | /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
   FLAGS = -g
   LINK_LIBRARIES = /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1  /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1  /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1  /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
   OBJECT_DIR = CMakeFiles/Game.dir

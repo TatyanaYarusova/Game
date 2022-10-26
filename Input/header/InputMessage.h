@@ -1,7 +1,7 @@
 #ifndef GAME_INPUTMESSAGE_H
 #define GAME_INPUTMESSAGE_H
 
-enum class InputCommand{
+enum InputCommand{ // убрала слово class
     MoveUp,
     MoveDown,
     MoveLeft,

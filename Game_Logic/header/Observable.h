@@ -3,6 +3,7 @@
 
 
 #include "Observer.h"
+#include "../../Loger/cpp/Logger.h"
 
 class Observable {
 protected:
@@ -10,6 +11,7 @@ protected:
 public:
     void setObserver(Observer* observer);
     void notify();
+    void notify_logger(Message message);
 
 
 };
