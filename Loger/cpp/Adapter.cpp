@@ -1,3 +1,4 @@
+#include <iostream>
 #include "../header/Adapter.h"
 
 //void Adapter::addLogers(ILevel* level) {

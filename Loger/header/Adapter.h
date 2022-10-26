@@ -10,7 +10,7 @@ class Adapter {
 private:
     //std::vector<ILevel*> levels;
     std::vector<ILoger*> logers;
-    Option option = Option::ConsoleLogger;
+    Option option = Option::FileLogger;
 public:
     //void addLogers(ILevel* level);
     void addLogers(ILoger* loger);

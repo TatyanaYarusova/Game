@@ -3,10 +3,43 @@
 
 
 #include "Player.h"
+#include "../../Input/header/Reader.h"
+#include "../../Input/header/KeyboardReader.h"
+#include "../../Draw_SFML/header/DrawField.h"
+#include "../../Input/header/PlayerController.h"
+#include "../../Input/header/GameController.h"
+#include "../../Event/header/StormEvent.h"
+#include "../../Event/header/SunEvent.h"
+#include "../../Event/header/WellEvent.h"
+#include "../../Event/header/PartEvent.h"
+#include "../../Event/header/PlatfotmEvent.h"
+#include "../header/Status_game.h"
+#include "../header/Win.h"
+#include "../header/GameOver.h"
+#include "../../Event/header/StormMoveEvent.h"
+#include "../../Loger/header/GameLogger.h"
+#include "../../Loger/header/FileLoger.h"
+#include "../../Loger/header/ConsoleLoger.h"
+#include <SFML/Graphics.hpp>
 
 class Game {
+private:
+    Field* map;
+    Status_game* status_game;
+    Win* win;
+    GameOver* gameover;
+    FileLoger* filelog;
+    ConsoleLoger* console;
+    Adapter* adapter;
+    StormEvent* storm;
+    SunEvent* sun;
+    WellEvent* well;
+    PartEvent* part;
+    PlatformEvent* platform;
+    StormMoveEvent* stormmove;
 public:
     void start();
+    ~Game();
 };
 
 
