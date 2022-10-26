@@ -1,30 +1,31 @@
 #include "../header/Adapter.h"
 
-void Adapter::addLogers(ILevel* level) {
-    levels.emplace_back(level);
+//void Adapter::addLogers(ILevel* level) {
+//    levels.emplace_back(level);
+//
+//}
 
-}
-
-void Adapter::addLevels(ILoger* loger) {
+void Adapter::addLogers(ILoger* loger) {
     logers.emplace_back(loger);
 
 }
 
-void Adapter::process(IMessage message, Option option) {
-    int n = static_cast<int>(Option::All);
+
+void Adapter::process(std::string& string) {
+    int n = static_cast<int>(option);
     switch (option) {
         case Option::All:
             for(int i = 0; i < n; i++){
-                logers[i]->print(message);
+                logers[i]->print(string);
                 break;
             }
 
         case Option::ConsoleLogger:
-            logers[0]->print(message);
+            logers[n]->print(string);
             break;
 
         case Option::FileLogger:
-            logers[0]->print(message);
+            logers[n]->print(string);
             break;
 
         default:
@@ -32,3 +33,8 @@ void Adapter::process(IMessage message, Option option) {
     }
 
 }
+
+//void Adapter::setOption(Option option) {
+//    this->option = option;
+//
+//}

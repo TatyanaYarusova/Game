@@ -6,7 +6,7 @@
 
 class ConsoleLoger : public ILoger{
 public:
-    void print(IMessage& message) override;
+    void print(std::string &string) override;
 };
 
 

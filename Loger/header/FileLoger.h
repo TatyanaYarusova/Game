@@ -13,9 +13,9 @@ private:
 public:
     FileLoger();
     FileLoger(const std::string& filename);
-    void print(IMessage message) override;
-    friend std::ostream& operator<<(std::ofstream stream, FileLoger obj);
-    ~FileLoger();
+    void print(std::string &string) override;
+    //friend std::ostream& operator<<(std::ofstream stream, FileLoger obj);
+    //~FileLoger();
 
 };
 

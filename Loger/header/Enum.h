@@ -1,12 +1,10 @@
-#ifndef GAME_LOGGER_H
-#define GAME_LOGGER_H
-
-#include "../header/Adapter.h"
-
+#ifndef GAME_ENUM_H
+#define GAME_ENUM_H
 enum class Level{
     GameLevel,
     ErrorLevel,
-    StatusLevel
+    StatusLevel,
+    All
 };
 
 enum class Message{
@@ -35,15 +33,4 @@ enum class Option{
     All
 };
 
-class Logger {
-private:
-    Level level;
-    Message message;
-    Adapter* adapter;
-    Player* player;
-    Field* field;
-
-};
-
-
-#endif //GAME_LOGGER_H
+#endif //GAME_ENUM_H

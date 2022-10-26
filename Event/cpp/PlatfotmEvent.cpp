@@ -5,6 +5,7 @@ void PlatformEvent::update() {
         this->notify();
     }
     else{
-        std::cout<<"You have "<<player->getCountPart()<<" part. You should found >= 1 part!\n";
+        this->notify_logger(Message::Platforma, 0);
+        //std::cout<<"You have "<<player->getCountPart()<<" part. You should found >= 1 part!\n";
     }
 }

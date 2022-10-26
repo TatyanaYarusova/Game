@@ -4,7 +4,7 @@
 
 #include "EffectOnField.h"
 
-class StormMoveEvent : public EffectOnField {
+class StormMoveEvent : public EffectOnField, public Observable {
 public:
     StormMoveEvent(Field* map, PlayerController* controller) : EffectOnField(map, controller){};
     void update() override;

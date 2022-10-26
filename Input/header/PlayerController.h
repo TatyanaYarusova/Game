@@ -7,7 +7,7 @@
 #include "../../Draw_SFML/header/DrawPlayer.h"
 
 
-class PlayerController:public IController {
+class PlayerController:public IController, public Observable {
 private:
     Field* map;
     Player* player;
@@ -21,6 +21,7 @@ public:
     void moveLeft();
     void getProcess(const InputMessage &message) override;
     void callEvent();
+
 };
 
 

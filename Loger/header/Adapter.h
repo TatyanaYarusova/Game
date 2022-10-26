@@ -3,18 +3,20 @@
 
 
 #include <vector>
-#include "../Level/header/ILevel.h"
 #include "ILoger.h"
-#include "../Level/header/IMessage.h"
+#include "Enum.h"
 
 class Adapter {
 private:
-    std::vector<ILevel*> levels;
+    //std::vector<ILevel*> levels;
     std::vector<ILoger*> logers;
+    Option option = Option::ConsoleLogger;
 public:
-    void addLogers(ILevel* level);
-    void addLevels(ILoger* loger);
-    void process(IMessage message, Option option);
+    //void addLogers(ILevel* level);
+    void addLogers(ILoger* loger);
+    void process(std::string& string);
+    //void setOption(Option option);
+
 
 };
 

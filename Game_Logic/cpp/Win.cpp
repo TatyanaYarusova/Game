@@ -4,10 +4,12 @@
 Win::Win(Player* player) : player(player){}
 
 void Win::update() {
-    std::cout<<"You are win!"<<"\n";
+    this->notify_logger(Message::Win, 0);
     this->notify();
 
 
 }
+
+void Win::update_logger(Message message, int value) {}
 
 

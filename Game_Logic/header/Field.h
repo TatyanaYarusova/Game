@@ -7,7 +7,7 @@
 #include "../../Point.h"
 
 
-class Field {
+class Field : public Observable{
 
     int height;
     int width;

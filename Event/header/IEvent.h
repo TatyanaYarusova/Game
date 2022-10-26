@@ -4,11 +4,10 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include "../../Point.h"
+#include "../../Game_Logic/header/Observable.h"
 
 
-
-
-class IEvent {
+class IEvent{
 public:
     virtual void update() = 0;
 };

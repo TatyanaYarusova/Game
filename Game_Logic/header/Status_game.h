@@ -8,8 +8,10 @@
 class Status_game : public Observer {
     bool value;
 public:
+    Status_game();
     Status_game(bool);
     void update() override;
+    void update_logger(Message message,int value) override;
     bool getValue();
 
 };

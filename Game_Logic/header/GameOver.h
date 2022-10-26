@@ -12,6 +12,7 @@ private:
 public:
     GameOver(Player* player);
     void update() override;
+    void update_logger(Message message, int value) override;
 
 };
 

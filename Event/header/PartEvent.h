@@ -4,7 +4,7 @@
 
 #include "EffectOnPlayer.h"
 
-class PartEvent : public EffectOnPlayer {
+class PartEvent : public EffectOnPlayer, public Observable {
 public:
     PartEvent(Player* player): EffectOnPlayer(player){};
     void update() override;

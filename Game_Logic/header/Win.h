@@ -11,6 +11,7 @@ private:
 public:
     Win(Player* player);
     void update() override;
+    void update_logger(Message message, int value) override;
 };
 
 
