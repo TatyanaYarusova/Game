@@ -4,12 +4,9 @@
 Win::Win(Player* player) : player(player){}
 
 void Win::update() {
-    this->notify_logger(Message::Win, 0);
     this->notify();
-
+    this->notify_log(LogMessage{"You are win!", Level::Status});
 
 }
-
-void Win::update_logger(Message message, int value) {}
 
 

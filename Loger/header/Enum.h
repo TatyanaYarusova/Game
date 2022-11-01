@@ -1,10 +1,9 @@
 #ifndef GAME_ENUM_H
 #define GAME_ENUM_H
 enum class Level{
-    GameLevel,
-    ErrorLevel,
-    StatusLevel,
-    All
+    Error,
+    Status,
+    Game,
 };
 
 enum class Message{

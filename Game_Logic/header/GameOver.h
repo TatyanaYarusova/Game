@@ -5,14 +5,14 @@
 #include "Observer.h"
 #include "Observable.h"
 #include "Player.h"
+#include "../../Loger/header/LogObservable.h"
 
-class GameOver : public Observer, public Observable {
+class GameOver : public Observer, public Observable, public LogObservable {
 private:
     Player* player;
 public:
     GameOver(Player* player);
     void update() override;
-    void update_logger(Message message, int value) override;
 
 };
 

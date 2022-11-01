@@ -5,9 +5,10 @@
 #include "../../Game_Logic/header/Field.h"
 #include "IController.h"
 #include "../../Draw_SFML/header/DrawPlayer.h"
+#include "../../Loger/header/LogObservable.h"
 
 
-class PlayerController:public IController, public Observable {
+class PlayerController:public IController, public Observable, public LogObservable {
 private:
     Field* map;
     Player* player;

@@ -3,8 +3,9 @@
 
 
 #include "EffectOnField.h"
+#include "../../Loger/header/LogObservable.h"
 
-class StormEvent : public EffectOnField, public Observable {
+class StormEvent : public EffectOnField, public Observable, public LogObservable{
 public:
     StormEvent(Field* map, PlayerController* controller): EffectOnField(map, controller){};
     void update() override;

@@ -5,9 +5,10 @@
 #include "Cell.h"
 
 #include "../../Point.h"
+#include "../../Loger/header/LogObservable.h"
 
 
-class Field : public Observable{
+class Field : public Observable, public LogObservable{
 
     int height;
     int width;

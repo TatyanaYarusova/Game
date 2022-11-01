@@ -6,28 +6,26 @@ Field::Field() : Field(7, 7) {}
 
 Field::Field(int height, int width) {
     if ((width != height) or (width % 2 == 0) or (width < 0 and height < 0)) {
-        this->notify_logger(Message::Error,0);
-        exit(0);
+        height = 7;
+        width = 7;
     }
-    else {
 
-        player_pos.x = 0;
-        player_pos.y = 0;
-        this->side_cell = 100;
-        this->height = height;
-        this->width = width;
+    player_pos.x = 0;
+    player_pos.y = 0;
+    this->side_cell = 100;
+    this->height = height;
+    this->width = width;
 
-        this->cells.resize(height);
-        for (int m = 0; m < height; m++) {
-            this->cells[m].resize(width);
-        }
-
-        this->cells[2][2].setPassability(false); // Закрываю клетки
-        this->cells[1][3].setPassability(false);
-        this->cells[4][4].setPassability(false);
-        this->cells[5][1].setPassability(false);
-        this->cells[6][6].setPassability(false);
+    this->cells.resize(height);
+    for (int m = 0; m < height; m++) {
+        this->cells[m].resize(width);
     }
+
+    this->cells[2][2].setPassability(false); // Закрываю клетки
+    this->cells[1][3].setPassability(false);
+    this->cells[4][4].setPassability(false);
+    this->cells[5][1].setPassability(false);
+    this->cells[6][6].setPassability(false);
 
 }
 

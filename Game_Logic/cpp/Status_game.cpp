@@ -12,5 +12,3 @@ bool Status_game::getValue() {
     return this->value;
 }
 
-void Status_game::update_logger(Message message, int value) {}
-

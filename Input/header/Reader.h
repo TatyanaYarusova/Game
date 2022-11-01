@@ -2,8 +2,9 @@
 #define UNTITLED_READER_H
 
 #include "InputMediator.h"
+#include "../../Loger/header/LogObservable.h"
 
-class Reader {
+class Reader : public LogObservable{
     InputMediator* mediator;
 public:
     void read();

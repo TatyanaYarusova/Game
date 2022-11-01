@@ -17,9 +17,9 @@
 #include "../header/Win.h"
 #include "../header/GameOver.h"
 #include "../../Event/header/StormMoveEvent.h"
-#include "../../Loger/header/GameLogger.h"
-#include "../../Loger/header/FileLoger.h"
-#include "../../Loger/header/ConsoleLoger.h"
+#include "../../Loger/header/FileLogger.h"
+#include "../../Loger/header/ConsoleLogger.h"
+#include "../../Loger/header/Adapter.h"
 #include <SFML/Graphics.hpp>
 
 class Game {
@@ -28,8 +28,8 @@ private:
     Status_game* status_game;
     Win* win;
     GameOver* gameover;
-    FileLoger* filelog;
-    ConsoleLoger* console;
+    FileLogger* filelog;
+    ConsoleLogger* console;
     Adapter* adapter;
     StormEvent* storm;
     SunEvent* sun;

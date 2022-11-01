@@ -4,12 +4,11 @@
 GameOver::GameOver(Player* player) : player(player) {}
 
 void GameOver::update() {
-    this->notify_logger(Message::Water, this->player->getWater());
+    this->notify_log(LogMessage{"Water: ", Level::Game, player->getWater()});
     if(player->getWater() <= 0) {
-        this->notify_logger(Message::Loss, 0);
+        this->notify_log(LogMessage{"You are loss!(", Level::Status});
         this->notify();
     }
 
 }
 
-void GameOver::update_logger(Message message, int value) {}

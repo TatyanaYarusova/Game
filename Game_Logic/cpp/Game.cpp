@@ -1,4 +1,6 @@
 #include "../header/Game.h"
+#include "../../Input/header/ReaderLogger.h"
+#include "../../Input/header/LoggerController.h"
 
 
 void Game::start() {
@@ -6,6 +8,18 @@ void Game::start() {
     InputMediator mediator;
     KeyboardReader keyboardReader{&mediator};
     Reader reader{&mediator};
+    ReaderLogger reader_logger{&mediator};
+
+    //Logger
+    filelog = new FileLogger();
+    console = new ConsoleLogger();
+    adapter = new Adapter;
+    adapter->addLogers(console);
+    adapter->addLogers(filelog);
+    LoggerController log_control{adapter};
+    mediator.addController(&log_control);
+    reader_logger.readOption();
+    reader.setLogObaserver(adapter);
 
     // create GameController and add it in mediator
     GameController gameController;
@@ -16,7 +30,6 @@ void Game::start() {
 
     //create Field and create Player
     map = new Field(gameController.getWidth(), gameController.getHeight());
-
     Player player(gameController.getRole());
 
     //create Observer
@@ -24,20 +37,14 @@ void Game::start() {
     win = new Win(&player);
     gameover = new GameOver(&player);
 
-    //Logger
-    filelog = new FileLoger();
-    console = new ConsoleLoger();
-    adapter = new Adapter;
-    adapter->addLogers(console);
-    adapter->addLogers(filelog);
 
-    GameLogger logger(adapter);
+
+
     player.setObserver(gameover);
-    map->setObserver(&logger);
     win->setObserver(status_game);
-    win->setObserver(&logger);
+    win->setLogObaserver(adapter);
     gameover->setObserver(status_game);
-    gameover->setObserver(&logger);
+    gameover->setLogObaserver(adapter);
 
 
 
@@ -45,8 +52,7 @@ void Game::start() {
     PlayerController playerController{map, &player};
     mediator.addController(&playerController);
 
-    playerController.setObserver(&logger);
-
+    playerController.setLogObaserver(adapter);
     //create drawField
     DrawField draw_map;
 
@@ -58,10 +64,11 @@ void Game::start() {
     platform = new PlatformEvent(&player);
     stormmove = new StormMoveEvent(map, &playerController);
     platform->setObserver(win);
-    platform->setObserver(&logger);
-    storm->setObserver(&logger);
-    stormmove->setObserver(&logger);
-    part->setObserver(&logger);
+    platform->setLogObaserver(adapter);
+    part->setLogObaserver(adapter);
+    storm->setLogObaserver(adapter);
+    stormmove->setLogObaserver(adapter);
+
     map->getCell(3, 2).setEvent(sun);
     map->getCell(3, 3).setEvent(well);
     map->getCell(4, 5).setEvent(part);

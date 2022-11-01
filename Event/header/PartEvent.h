@@ -3,8 +3,9 @@
 
 
 #include "EffectOnPlayer.h"
+#include "../../Loger/header/LogObservable.h"
 
-class PartEvent : public EffectOnPlayer, public Observable {
+class PartEvent : public EffectOnPlayer, public Observable, public LogObservable {
 public:
     PartEvent(Player* player): EffectOnPlayer(player){};
     void update() override;

@@ -8,7 +8,9 @@ enum InputCommand{ // убрала слово class
     MoveRight,
     SetFieldWidth,
     SetFieldHeight,
-    SetPlayerRole
+    SetPlayerRole,
+    SetOption,
+    SetLevel
 };
 
 struct InputMessage{

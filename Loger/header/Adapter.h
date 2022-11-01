@@ -3,20 +3,25 @@
 
 
 #include <vector>
-#include "ILoger.h"
+#include "ILogger.h"
 #include "Enum.h"
+#include "LogMessage.h"
+#include "LogObserver.h"
 
-class Adapter {
+class Adapter : public LogObserver{
 private:
-    //std::vector<ILevel*> levels;
-    std::vector<ILoger*> logers;
-    Option option = Option::FileLogger;
+    std::vector<ILogger*> logers;
+    Level level;
+    Option option;
+    std::string string;
 public:
-    //void addLogers(ILevel* level);
-    void addLogers(ILoger* loger);
+    void addLogers(ILogger* loger);
     void process(std::string& string);
-    //void setOption(Option option);
-
+    void setOption(int opt);
+    void setLevel(int l);
+    std::string makeString(Level level);
+    //void cast(LogMessage message);
+    void getLog(LogMessage message) override;
 
 };
 

@@ -13,36 +13,36 @@ void PlayerController::callEvent(){
 void PlayerController::moveLeft() {
     if (this->map->getCell((map->getPlayerPos().x - 1 + map->getWidth()) % map->getWidth(), map->getPlayerPos().y).getPassability()) {
         map->setPlayerPos((map->getPlayerPos().x - 1 + map->getWidth()) % map->getWidth(), map->getPlayerPos().y);
-        this->notify_logger(Message::MoveLeft,0);
+        this->notify_log(LogMessage{"Player has moved one cell LEFT!",Level::Game});
         callEvent();
 
     }
     else{
-        this->notify_logger(Message::CellClose,0);
+        this->notify_log(LogMessage{"Cell is locked!", Level::Error});
     }
 }
 
 void PlayerController::moveRight() {
     if (this->map->getCell((map->getPlayerPos().x + 1) % map->getWidth(), map->getPlayerPos().y).getPassability()) {
         map->setPlayerPos((map->getPlayerPos().x + 1) % map->getWidth(), map->getPlayerPos().y);
-        this->notify_logger(Message::MoveRight,0);
+        this->notify_log(LogMessage{"Player has moved one cell RIGHT!",Level::Game});
         callEvent();
 
     }
     else{
-        this->notify_logger(Message::CellClose,0);
+        this->notify_log(LogMessage{"Cell is locked!", Level::Error});
     }
 }
 
 void PlayerController::moveDown() {
     if (this->map->getCell(map->getPlayerPos().x, (map->getPlayerPos().y + 1) % map->getHeight()).getPassability()) {
         map->setPlayerPos(map->getPlayerPos().x, (map->getPlayerPos().y + 1) % map->getHeight());
-        this->notify_logger(Message::MoveDown,0);
+        this->notify_log(LogMessage{"Player has moved one cell DOWN!",Level::Game});
         callEvent();
 
     }
     else{
-        this->notify_logger(Message::CellClose,0);
+        this->notify_log(LogMessage{"Cell is locked!", Level::Error});
     }
 
 }
@@ -50,12 +50,12 @@ void PlayerController::moveDown() {
 void PlayerController::moveUp() {
     if (this->map->getCell(map->getPlayerPos().x, (map->getPlayerPos().y - 1 + map->getHeight()) % map->getHeight()).getPassability()) {
         map->setPlayerPos(map->getPlayerPos().x, (map->getPlayerPos().y - 1 + map->getHeight()) % map->getHeight());
-        this->notify_logger(Message::MoveUp,0);
+        this->notify_log(LogMessage{"Player has moved one cell UP!",Level::Game});
         callEvent();
 
     }
     else{
-        this->notify_logger(Message::CellClose,0);
+        this->notify_log(LogMessage{"Cell is locked!", Level::Error});
     }
 
 

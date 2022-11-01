@@ -14,6 +14,7 @@ Player::Player(int name):role(name) {
             this->water = 5;
             break;
         default:
+            this->water = 2;
             break;
     }
 
@@ -30,7 +31,6 @@ int Player::getCountPart() {
 
 void Player::setWater(int water) {
     this->water = water;
-
     this->notify();
 }
 

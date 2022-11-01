@@ -4,14 +4,14 @@
 
 #include "Observable.h"
 #include "Player.h"
+#include "../../Loger/header/LogObservable.h"
 
-class Win : public Observable , public Observer{
+class Win : public Observable , public Observer, public LogObservable{
 private:
     Player* player;
 public:
     Win(Player* player);
     void update() override;
-    void update_logger(Message message, int value) override;
 };
 
 
