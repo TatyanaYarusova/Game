@@ -1,12 +1,16 @@
 #include "../header/Game.h"
 #include "../../Input/header/ReaderLogger.h"
 #include "../../Input/header/LoggerController.h"
+#include "../../Input/header/FileReader.h"
 
 
 void Game::start() {
     //create mediator
     InputMediator mediator;
     KeyboardReader keyboardReader{&mediator};
+    FileReader fileReader{&keyboardReader, "/home/tatyana/CLionProjects/Game/Game_Logic/cpp/Commands.txt"};
+    fileReader.createDefault();
+    fileReader.read();
     Reader reader{&mediator};
     ReaderLogger reader_logger{&mediator};
 
