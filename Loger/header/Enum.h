@@ -6,25 +6,6 @@ enum class Level{
     Game,
 };
 
-enum class Message{
-    Water,
-    Part,
-    Platforma,
-    Storm,
-    MoveStorm,
-    MoveLeft,
-    MoveRight,
-    MoveDown,
-    MoveUp,
-    CellClose,
-
-    Win,
-    Loss,
-    Save,
-    Play,
-
-    Error
-};
 
 enum class Option{
     ConsoleLogger,

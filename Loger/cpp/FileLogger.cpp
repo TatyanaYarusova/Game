@@ -4,7 +4,7 @@
 FileLogger::FileLogger() : FileLogger("/home/tatyana/CLionProjects/Game/LogFile.txt") {}
 
 FileLogger::FileLogger(const std::string& filename){
-    file.open(filename,std::ios_base::app);
+    file.open(filename);
 }
 
 void FileLogger::print(std::string& string){

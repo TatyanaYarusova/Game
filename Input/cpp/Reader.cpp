@@ -10,7 +10,7 @@ void Reader::read() {
     int role;
     std::cin>>role;
     if ((width != height) or (width % 2 == 0) or (width < 0 and height < 0)) {
-        this->notify_log(LogMessage{"Error!", Level::Error});
+        this->notify_log(LogMessage{"Error! The field parametrs were entered incorrectly. The default 7x7 field was created.", Level::Error});
     }
     mediator->onCommandProcessed(InputMessage{InputCommand::SetFieldWidth,width});
     mediator->onCommandProcessed(InputMessage{InputCommand::SetFieldHeight,height});
