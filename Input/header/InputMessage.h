@@ -6,6 +6,8 @@ enum InputCommand{ // убрала слово class
     MoveDown,
     MoveLeft,
     MoveRight,
+    Stop,
+
     SetFieldWidth,
     SetFieldHeight,
     SetPlayerRole,

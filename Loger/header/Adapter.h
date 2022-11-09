@@ -20,7 +20,6 @@ public:
     void setOption(int opt);
     void setLevel(int l);
     std::string makeString(Level level);
-    //void cast(LogMessage message);
     void getLog(LogMessage message) override;
 
 };
