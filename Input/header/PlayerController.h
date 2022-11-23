@@ -12,7 +12,6 @@ class PlayerController:public IController, public Observable, public LogObservab
 private:
     Field* map;
     Player* player;
-    DrawPlayer sprite;
 public:
     PlayerController(Field* map, Player* player);
     void changeMap(Field* otherMap);

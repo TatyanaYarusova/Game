@@ -4,10 +4,11 @@
 
 #include <fstream>
 #include "KeyboardReader.h"
-#include "../cpp/Converter.h"
+#include "Converter.h"
+#include "../../Loger/header/LogObservable.h"
 
 
-class FileReader {
+class FileReader: public LogObservable {
 private:
     std::ifstream file;
     KeyboardReader* reader;

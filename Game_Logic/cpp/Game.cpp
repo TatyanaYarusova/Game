@@ -8,9 +8,6 @@ void Game::start() {
     //create mediator
     InputMediator mediator;
     KeyboardReader keyboardReader{&mediator};
-    FileReader fileReader{&keyboardReader, "/home/tatyana/CLionProjects/Game/Game_Logic/cpp/Commands.txt"};
-    fileReader.createDefault();
-    fileReader.read();
     Reader reader{&mediator};
     ReaderLogger reader_logger{&mediator};
 
@@ -24,6 +21,11 @@ void Game::start() {
     mediator.addController(&log_control);
     reader_logger.readOption();
     reader.setLogObaserver(adapter);
+
+    FileReader fileReader{&keyboardReader, "/home/tatyana/CLionProjects/Game/Game_Logic/cpp/Commands.txt"};
+    fileReader.setLogObaserver(adapter);
+    fileReader.createDefault();
+    fileReader.read();
 
     // create GameController and add it in mediator
     GameController gameController;

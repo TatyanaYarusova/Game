@@ -1,4 +1,4 @@
-Up = W
-Down = S
+Up D
+Down = D
 Right = D
-Left = A
+Left = D

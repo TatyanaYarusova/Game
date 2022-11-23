@@ -1,4 +1,4 @@
-#include "Converter.h"
+#include "../header/Converter.h"
 
 Converter::Converter() {
     this->commands_dict.emplace("Q", sf::Keyboard::Q);
