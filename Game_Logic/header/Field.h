@@ -28,7 +28,6 @@ public:
     int getWidth() const;
     Point getPlayerPos() const;
     void setPlayerPos(int, int);
-    std::vector<std::vector<Cell>>& getCells();
 };
 
 #endif //UNTITLED_FIELD_H

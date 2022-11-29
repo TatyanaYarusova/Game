@@ -1,15 +1,10 @@
 #include "../header/GameController.h"
 
-int GameController::getHeight() {
-    return height;
-}
-
-int GameController::getWidth() {
-    return width;
-}
-
 int GameController::getRole() {
     return role;
+}
+int GameController::getGameLevel() {
+    return level;
 }
 
 void GameController::getProcess(const InputMessage& message) {
@@ -17,11 +12,8 @@ void GameController::getProcess(const InputMessage& message) {
         case InputCommand::SetPlayerRole:
             role = message.value;
             break;
-        case InputCommand::SetFieldHeight:
-            height = message.value;
-            break;
-        case InputCommand::SetFieldWidth:
-            width = message.value;
+        case InputCommand::SetGameLevel:
+            level = message.value;
             break;
         default:
             break;
@@ -29,5 +21,7 @@ void GameController::getProcess(const InputMessage& message) {
     }
 
 }
+
+
 
 

@@ -7,7 +7,7 @@
 
 class StormEvent : public EffectOnField, public Observable, public LogObservable{
 public:
-    StormEvent(Field* map, PlayerController* controller): EffectOnField(map, controller){};
+    StormEvent(Field* map, PlayerController* playerController = nullptr) : EffectOnField(map, playerController) {};
     void update() override;
 };
 

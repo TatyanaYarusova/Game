@@ -5,12 +5,10 @@
 
 class GameController: public IController {
 private:
-    int width;
-    int height;
+    int level;
     int role;
 public:
-    int getWidth();
-    int getHeight();
+    int getGameLevel();
     int getRole();
     void getProcess(const InputMessage &message) override;
 };

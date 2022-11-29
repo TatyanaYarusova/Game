@@ -4,18 +4,20 @@
 
 #include "../Strategy/header/IStrategy.h"
 #include "../../header/Field.h"
+#include "../../header/Player.h"
+#include "../../../Loger/header/Adapter.h"
 
 class FieldConfigurator {
 private:
-    GameLevel level;
+    int level;
     IStrategy* strategy;
     FieldScheme scheme;
     Field* map;
 public:
     void set_strategy(IStrategy* strategy);
-    void set_level(GameLevel level);
+    void set_level(int level);
     void set_scheme();
-    Field* configurate();
+    Field* configurate(Player* player, Adapter* adapter);
 };
 
 

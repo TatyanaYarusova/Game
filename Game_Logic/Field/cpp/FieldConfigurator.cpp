@@ -1,21 +1,25 @@
-#include "FieldConfigurator.h"
+#include "../header/FieldConfigurator.h"
 #include "../Strategy/header/Level_first.h"
 #include "../Strategy/header/Level_second.h"
 #include "../Strategy/header/Level_other.h"
+
+#include "../../../Event/header/SunEvent.h"
+#include "../../../Event/header/WellEvent.h"
+#include "../../../Event/header/StormEvent.h"
 
 void FieldConfigurator::set_strategy(IStrategy* strategy) {
      this->strategy = strategy;
 
 }
 
-void FieldConfigurator::set_level(GameLevel level) {
+void FieldConfigurator::set_level(int level) {
         this->level = level;
-        switch (level) {
-            case GameLevel::first:
+        switch (this->level) {
+            case 1:
                 set_strategy(new Level_first);
                 break;
 
-            case GameLevel::second:
+            case 2:
                 set_strategy(new Level_second);
                 break;
 
@@ -29,11 +33,13 @@ void FieldConfigurator::set_scheme() {
     scheme = strategy->generate();
 }
 
-Field* FieldConfigurator::configurate() {
+Field* FieldConfigurator::configurate(Player* player, Adapter* adapter) {
     this->set_scheme();
     int size = scheme.scheme.size();
     this->map = new Field(size, size);
-
+    auto sun = new SunEvent(player);
+    auto well = new WellEvent(player);
+    auto storm = new StormEvent(map);
 
     for(int x = 0; x < size; x++){
         for(int y = 0; y < size; y ++){
@@ -42,10 +48,14 @@ Field* FieldConfigurator::configurate() {
                     this->map->getCell(y,x).setPassability(false);
                     break;
                 case Type::sun:
+                    this->map->getCell(y,x).setEvent(sun);
                     break;
                 case Type::well:
+                    this->map->getCell(y,x).setEvent(well);
                     break;
                 case Type::storm:
+                    this->map->getCell(y,x).setEvent(storm);
+                    storm->setLogObaserver(adapter);
                     break;
                 case Type::player:
                     this->map->setPlayerPos(y,x);

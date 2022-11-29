@@ -36,11 +36,11 @@ void Game::start() {
     reader.read();
 
     //create Field and create Player
-    //map = new Field(gameController.getWidth(), gameController.getHeight());
-    FieldConfigurator configurator;
-    configurator.set_level(GameLevel::second); //TODO  через считыватель
-    map = configurator.configurate();
     Player player(gameController.getRole());
+    FieldConfigurator configurator;
+    configurator.set_level(gameController.getGameLevel()); //TODO  через считыватель
+
+
 
     //create Observer
     status_game = new Status_game(true);
@@ -57,27 +57,28 @@ void Game::start() {
     gameover->setLogObaserver(adapter);
 
 
-
+    map = configurator.configurate(&player, adapter);
     //create playerController and add it in mediator
     PlayerController playerController{map, &player};
     mediator.addController(&playerController);
 
     playerController.setLogObaserver(adapter);
+
     //create drawField
     DrawField draw_map;
 
     //create event
-    storm = new StormEvent(map, &playerController);
-    sun = new SunEvent(&player);
-    well = new WellEvent(&player);
-    part = new PartEvent(&player);
-    platform = new PlatformEvent(&player);
-    stormmove = new StormMoveEvent(map, &playerController);
-    platform->setObserver(win);
-    platform->setLogObaserver(adapter);
-    part->setLogObaserver(adapter);
-    storm->setLogObaserver(adapter);
-    stormmove->setLogObaserver(adapter);
+//    storm = new StormEvent(map, &playerController);
+//    sun = new SunEvent(&player);
+//    well = new WellEvent(&player);
+//    part = new PartEvent(&player);
+//    platform = new PlatformEvent(&player);
+//    stormmove = new StormMoveEvent(map, &playerController);
+//    platform->setObserver(win);
+//    platform->setLogObaserver(adapter);
+//    part->setLogObaserver(adapter);
+//    storm->setLogObaserver(adapter);
+//    stormmove->setLogObaserver(adapter);
 
 //    map->getCell(3, 2).setEvent(sun);
 //    map->getCell(3, 3).setEvent(well);
@@ -116,12 +117,6 @@ Game::~Game() {
     delete filelog;
     delete console;
     delete adapter;
-    delete storm;
-    delete sun;
-    delete well;
-    delete part;
-    delete platform;
-    delete stormmove;
 
 }
 

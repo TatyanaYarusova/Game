@@ -3,12 +3,6 @@
 
 #include "FieldScheme.h"
 
-enum class GameLevel{
-    first,
-    second,
-    other
-};
-
 template<typename ... Rules>
 class LevelGenerator {
 private:

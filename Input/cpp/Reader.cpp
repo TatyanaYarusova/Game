@@ -2,18 +2,13 @@
 #include <iostream>
 
 void Reader::read() {
-    std::cout<<"Введите параметры поля"<<"\n";
-    int width;
-    int height;
-    std::cin>>height>>width;
+    std::cout<<"Введите уровень игры"<<"\n"<<"1 - Первый уровень"<<"\n"<<"2 - Второй уровень"<<"\n";
+    int level;
+    std::cin>>level;
     std::cout<<"Выберите роль:"<<"\n"<<"1-Археолог"<<"\n"<<"2-Скаут"<<"\n"<<"3-Хранитель воды"<<"\n";
     int role;
     std::cin>>role;
-    if ((width != height) or (width % 2 == 0) or (width < 0 and height < 0)) {
-        this->notify_log(LogMessage{"Error! The field parametrs were entered incorrectly. The default 7x7 field was created.", Level::Error});
-    }
-    mediator->onCommandProcessed(InputMessage{InputCommand::SetFieldWidth,width});
-    mediator->onCommandProcessed(InputMessage{InputCommand::SetFieldHeight,height});
+    mediator->onCommandProcessed(InputMessage{InputCommand::SetGameLevel,level});
     mediator->onCommandProcessed(InputMessage{InputCommand::SetPlayerRole,role});
 
 }
