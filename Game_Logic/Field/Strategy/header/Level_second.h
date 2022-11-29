@@ -9,11 +9,13 @@ private:
     FieldScheme scheme;
     LevelGenerator<RuleSizeField<10, 10>,
             RulePlayerPosition<5, 5>,
+            RulePlatform<3, 1, 1>,
+            RulePart<5>,
             RuleWalls<20>,
             RuleSun<3>,
             RuleWell<1>,
             RuleStorm<5>
-    > generator;
+            > generator;
 public:
     FieldScheme generate() override;
 };

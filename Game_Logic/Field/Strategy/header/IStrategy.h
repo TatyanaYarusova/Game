@@ -8,6 +8,8 @@
 #include "../../Rules/header/RuleWell.h"
 #include "../../Rules/header/RuleStorm.h"
 #include "../../header/LevelGenerator.h"
+#include "../../Rules/header/RulePlatform.h"
+#include "../../Rules/header/RulePart.h"
 
 class IStrategy {
 public:

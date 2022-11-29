@@ -10,6 +10,8 @@ private:
     FieldScheme scheme;
     LevelGenerator<RuleSizeField<7,7>,
                    RulePlayerPosition<0, 0>,
+                   RulePlatform<1, 5, 5>,
+                   RulePart<3>,
                    RuleWalls<10>,
                    RuleSun<1>,
                    RuleWell<2>,

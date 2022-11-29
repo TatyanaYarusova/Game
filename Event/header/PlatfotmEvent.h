@@ -7,8 +7,11 @@
 #include "../../Loger/header/LogObservable.h"
 
 class PlatformEvent : public EffectOnPlayer, public Observable, public LogObservable{
+private:
+    int count = 0;
 public:
     PlatformEvent(Player* player ):EffectOnPlayer(player){};
+    void setCount(int count);
     void update() override;
 
 };

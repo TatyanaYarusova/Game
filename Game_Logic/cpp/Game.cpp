@@ -38,7 +38,7 @@ void Game::start() {
     //create Field and create Player
     Player player(gameController.getRole());
     FieldConfigurator configurator;
-    configurator.set_level(gameController.getGameLevel()); //TODO  через считыватель
+    configurator.set_level(gameController.getGameLevel());
 
 
 
@@ -57,7 +57,7 @@ void Game::start() {
     gameover->setLogObaserver(adapter);
 
 
-    map = configurator.configurate(&player, adapter);
+    map = configurator.configurate(&player, adapter, win);
     //create playerController and add it in mediator
     PlayerController playerController{map, &player};
     mediator.addController(&playerController);

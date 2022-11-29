@@ -16,5 +16,6 @@ enum class Type{
 };
 struct FieldScheme{
     std::vector<std::vector<Type>> scheme;
+    int count_part;
 };
 #endif //GAME_FIELDSCHEME_H
