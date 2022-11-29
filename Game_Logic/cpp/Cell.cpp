@@ -12,14 +12,6 @@ bool Cell::getPassability() {
     return this->is_passability;
 }
 
-int Cell::getCountSand() {
-    return this->count_sand;
-}
-
-void Cell::setCountSand() {
-    this->count_sand++;
-}
-
 void Cell::setEvent(IEvent* event) {
     this->event = event;
 
@@ -28,5 +20,7 @@ void Cell::setEvent(IEvent* event) {
 IEvent* Cell::getEvent() {
     return this->event;
 }
+
+
 
 

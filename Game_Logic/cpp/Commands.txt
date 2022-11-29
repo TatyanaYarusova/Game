@@ -1,4 +1,0 @@
-Up D
-Down = D
-Right = D
-Left = D

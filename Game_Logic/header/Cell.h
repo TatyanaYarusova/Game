@@ -3,6 +3,7 @@
 
 #include "../../Event/header/IEvent.h"
 
+
 class Cell {
 private:
     bool is_passability;
@@ -15,9 +16,6 @@ public:
     bool getPassability();
     void setEvent(IEvent* event);
     IEvent* getEvent();
-    int getCountSand();
-
-    void setCountSand();
 };
 
 

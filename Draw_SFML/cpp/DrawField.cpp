@@ -8,7 +8,7 @@ void DrawField::draw(Field& map, sf::RenderWindow& window) {
                 if(cell.getEvent()){
                     window.draw(drawCell.drawEvent(j,i));
                     //draw Events
-//                    window.draw(drawEvent.drawPart(4, 5));
+//                  window.draw(drawEvent.drawPart(4, 5));
 //                    window.draw(drawEvent.drawSun(3, 2));
 //                    window.draw(drawEvent.drawWell(3, 3));
 //                    window.draw(drawEvent.drawPlatform(1, 6));

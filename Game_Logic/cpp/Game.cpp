@@ -2,6 +2,7 @@
 #include "../../Input/header/ReaderLogger.h"
 #include "../../Input/header/LoggerController.h"
 #include "../../Input/header/FileReader.h"
+#include "../Field/header/FieldConfigurator.h"
 
 
 void Game::start() {
@@ -35,7 +36,10 @@ void Game::start() {
     reader.read();
 
     //create Field and create Player
-    map = new Field(gameController.getWidth(), gameController.getHeight());
+    //map = new Field(gameController.getWidth(), gameController.getHeight());
+    FieldConfigurator configurator;
+    configurator.set_level(GameLevel::second); //TODO  через считыватель
+    map = configurator.configurate();
     Player player(gameController.getRole());
 
     //create Observer
@@ -75,12 +79,12 @@ void Game::start() {
     storm->setLogObaserver(adapter);
     stormmove->setLogObaserver(adapter);
 
-    map->getCell(3, 2).setEvent(sun);
-    map->getCell(3, 3).setEvent(well);
-    map->getCell(4, 5).setEvent(part);
-    map->getCell(1, 6).setEvent(platform);
-    map->getCell(1, 0).setEvent(storm);
-    map->getCell(5, 1).setEvent(stormmove);
+//    map->getCell(3, 2).setEvent(sun);
+//    map->getCell(3, 3).setEvent(well);
+//    map->getCell(4, 5).setEvent(part);
+//    map->getCell(1, 6).setEvent(platform);
+//    map->getCell(1, 0).setEvent(storm);
+//    map->getCell(5, 1).setEvent(stormmove);
 
     sf::RenderWindow window(sf::VideoMode(1000, 1000), "Game");
 
