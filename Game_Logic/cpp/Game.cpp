@@ -2,8 +2,6 @@
 #include "../../Input/header/ReaderLogger.h"
 #include "../../Input/header/LoggerController.h"
 #include "../../Input/header/FileReader.h"
-#include "../Field/header/FieldConfigurator.h"
-
 
 void Game::start() {
     //create mediator

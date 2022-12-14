@@ -11,9 +11,9 @@ GameInfo::operator std::string() const {
 }
 
 void Saver::save(GameInfo info) {
-    std::ofstream file("Save.txt");
+    std::ofstream file("/home/tatyana/CLionProjects/Game/Game_Logic/Saver/header/Save.txt");
     if (!file.is_open()) {
-        throw SaverException("Saver error", SaverException::file);
+        throw SaverException("Unable to open file\n", SaverException::file);
     }
     file << std::string(info) << '\n';
     auto hash = getHash(info);
@@ -22,9 +22,9 @@ void Saver::save(GameInfo info) {
 }
 
 GameInfo Saver::load() {
-    std::ifstream file("Save.txt");
+    std::ifstream file("/home/tatyana/CLionProjects/Game/Game_Logic/Saver/header/Save.txt");
     if (!file.is_open()) {
-        throw SaverException("Saver error", SaverException::file);
+        throw SaverException("Unable to open file\n", SaverException::file);
     }
     std::vector<std::string> lines;
     std::string current_string;
@@ -44,7 +44,7 @@ GameInfo Saver::load() {
     auto hash_read = strtoll(current_string.data(), &ptr, 10);
     auto hash = getHash(info);
     if (hash_read != hash) {
-        throw SaverException("Saver error", SaverException::hash);
+        throw SaverException("The file has been modified\n", SaverException::hash);
     }
 
     return info;
@@ -54,7 +54,7 @@ PlayerInfo Saver::decPlayer(std::string string_info) {
     PlayerInfo info{};
     std::stringstream ss{string_info};
     if (!(ss >> info.count_water >> info.count_part)) {
-        throw SaverException("Error while decoding", SaverException::player);
+        throw SaverException("Incorrect data. Unable to decoding.\n", SaverException::player);
     }
     return info;
 }
@@ -66,14 +66,14 @@ FieldScheme Saver::decField(std::vector<std::string> map_info) {
         for (auto& c: map_info[i]) {
             int a = c - '0';
             if (a < 0 || a > 7) {
-                throw SaverException("Error while decoding", SaverException::field);
+                throw SaverException("Incorrect data. Unable to decoding.\n", SaverException::field); // не соответствие ни одному элементу из enum
             }
             vec.push_back(Type(a));
         }
         info.scheme.push_back(vec);
     }
     char* ptr;
-    info.count_part = strtol(map_info[map_info.size() - 1].data(), &ptr, 10);
+    info.count_part = strtol(map_info[map_info.size() - 1].data(), &ptr, 10); // конвертация строки в число
     return info;
 }
 

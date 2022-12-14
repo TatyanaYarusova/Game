@@ -2,3 +2,5 @@ Up = Up
 Left = Left
 Right = Right
 Down = Down
+Save = 1
+Load = 2

@@ -29,30 +29,7 @@ void KeyboardReader::process(sf::Event event) {
         if(keyboardCommand == this->commands["Load"]){
             message.command = InputCommand::Load;
         }
-//        switch (event.key.code) {
-//            case sf::Keyboard::Left:
-//            case this->commands.at("Left"):
-//                message.command = InputCommand::MoveLeft;
-//                break;
-//
-//            case sf::Keyboard::Right:
-//            case sf::Keyboard::D:
-//                message.command = InputCommand::MoveRight;
-//                break;
-//
-//            case sf::Keyboard::Up:
-//            case sf::Keyboard::W:
-//                message.command = InputCommand::MoveUp;
-//                break;
-//
-//            case sf::Keyboard::Down:
-//            case sf::Keyboard::S:
-//                message.command = InputCommand::MoveDown;
-//                break;
-//
-//            default:
-//                break;
-//        }
+
         mediator->onCommandProcessed(message);
     }
 

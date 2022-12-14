@@ -7,15 +7,13 @@ FileReader::FileReader(KeyboardReader* reader, const std::string& filename) {
     converter = new Converter;
 }
 void FileReader::createDefault() {
-    this->commands.emplace("Right", sf::Keyboard::Right); // две одинаковые кнопки на разные команды
+    this->commands.emplace("Right", sf::Keyboard::Right);
     this->commands.emplace("Left", sf::Keyboard::Left);
     this->commands.emplace("Up", sf::Keyboard::Up);
     this->commands.emplace("Down", sf::Keyboard::Down);
     this->commands.emplace("Save", sf::Keyboard::Num0);
     this->commands.emplace("Load", sf::Keyboard::Num1);
     reader->setCommands(commands);
-//    this->commands.emplace("Quit", sf::Keyboard::Escape);
-//    this->commands.emplaсe("Save", sf::Keyboard::F9);
 }
 void FileReader::read() {
     std::vector<std::string> values;

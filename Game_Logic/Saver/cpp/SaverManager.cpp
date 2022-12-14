@@ -43,20 +43,19 @@ Field* SaverManager::load(Player* player, Adapter* adapter, Win* win, FieldConfi
 }
 
 void SaverManager::printError(SaverException& e) {
-    std::cout << e.what();
     switch (e.getType()) {
         case SaverException::file:
-            std::cout << " (file)\n";
+            std::cout << "The exception is caused by an error in the data associated with FILE:";
             break;
         case SaverException::field:
-            std::cout << " (field)\n";
+            std::cout << "The exception is caused by an error in the data associated with FIELD:";
             break;
         case SaverException::player:
-            std::cout << " (player)\n";
+            std::cout << "The exception is caused by an error in the data associated with PLAYER:";
             break;
         case SaverException::hash:
-            std::cout << " (hash)\n";
+            std::cout << "The exception is caused by an error in the data associated with HASH:";
             break;
     }
-
+    std::cout << e.what();
 }
