@@ -19,28 +19,28 @@ struct GameInfo {
     explicit operator std::string() const;
 };
 
+enum class ErrorType {
+    file,
+    field,
+    player,
+    hash
+};
+
 class SaverException : public std::exception {
-public:
-    enum ErrorType {
-        file,
-        field,
-        player,
-        hash
-    };
-
-    SaverException(std::string msg, ErrorType type);
-
-    const char* what() const noexcept override;
-    ErrorType getType() const;
 private:
     std::string msg;
     ErrorType type;
+
+public:
+    SaverException(std::string msg, ErrorType type);
+    const char* what() const noexcept override;
+    ErrorType getType() const;
+
 };
 
 class Saver {
-private:
-    int64_t getHash(GameInfo game_info);
 public:
+    int64_t getHash(GameInfo game_info);
     void save(GameInfo info);
     GameInfo load();
     PlayerInfo decPlayer(std::string string_info);

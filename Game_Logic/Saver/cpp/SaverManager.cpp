@@ -10,7 +10,7 @@ void SaverManager::save(Field& field, Player& player) {
 
     for (int i = 0; i < field.getHeight(); i++) {
         for (int j = 0; j < field.getWidth(); j++) {
-            cell_data[i][j] = FieldHelper::getType(field.getCell(j, i));
+            cell_data[i][j] = helper.getType(field.getCell(j, i));
         }
     }
 
@@ -44,16 +44,16 @@ Field* SaverManager::load(Player* player, Adapter* adapter, Win* win, FieldConfi
 
 void SaverManager::printError(SaverException& e) {
     switch (e.getType()) {
-        case SaverException::file:
+        case ErrorType::file:
             std::cout << "The exception is caused by an error in the data associated with FILE:";
             break;
-        case SaverException::field:
+        case ErrorType::field:
             std::cout << "The exception is caused by an error in the data associated with FIELD:";
             break;
-        case SaverException::player:
+        case ErrorType::player:
             std::cout << "The exception is caused by an error in the data associated with PLAYER:";
             break;
-        case SaverException::hash:
+        case ErrorType::hash:
             std::cout << "The exception is caused by an error in the data associated with HASH:";
             break;
     }

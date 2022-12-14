@@ -1,6 +1,5 @@
 #include "../header/KeyboardReader.h"
 #include <SFML/Graphics.hpp>
-#include <iostream>
 
 void KeyboardReader::setCommands(Map commands) {
     this->commands = commands;
