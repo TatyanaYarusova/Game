@@ -15,6 +15,10 @@ class Field : public Observable, public LogObservable{
     int side_cell;
     std::vector<std::vector<Cell>> cells;
     Point player_pos;
+    int count_part;
+public:
+    int getCountPart() const;
+    void setCountPart(int countPart);
 
 public:
     Field();

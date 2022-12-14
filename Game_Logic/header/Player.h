@@ -12,6 +12,7 @@ private:
 public:
     Player(int name = 3);
     void setCountPart();
+    void setCountPart(int count_part);
     int getCountPart();
     void setWater(int);
     int getWater();

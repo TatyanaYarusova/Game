@@ -29,15 +29,14 @@ void Game::start() {
     fileReader.read();
 
     // create GameController and add it in mediator
-    GameController gameController;
+    GameController gameController(this);
     mediator.addController(&gameController);
 
     //reading
     reader.read();
 
     //create Field and create Player
-    Player player(gameController.getRole());
-    FieldConfigurator configurator;
+    player = Player(gameController.getRole());
     configurator.set_level(gameController.getGameLevel());
 
 
@@ -46,8 +45,6 @@ void Game::start() {
     status_game = new Status_game(true);
     win = new Win(&player);
     gameover = new GameOver(&player);
-
-
 
 
     player.setObserver(gameover);
@@ -59,33 +56,13 @@ void Game::start() {
 
     map = configurator.configurate(&player, adapter, win);
     //create playerController and add it in mediator
-    PlayerController playerController{map, &player};
-    mediator.addController(&playerController);
+    playerController = new PlayerController{map, &player};
+    mediator.addController(playerController);
 
-    playerController.setLogObaserver(adapter);
+    playerController->setLogObaserver(adapter);
 
     //create drawField
     DrawField draw_map;
-
-    //create event
-//    storm = new StormEvent(map, &playerController);
-//    sun = new SunEvent(&player);
-//    well = new WellEvent(&player);
-//    part = new PartEvent(&player);
-//    platform = new PlatformEvent(&player);
-//    stormmove = new StormMoveEvent(map, &playerController);
-//    platform->setObserver(win);
-//    platform->setLogObaserver(adapter);
-//    part->setLogObaserver(adapter);
-//    storm->setLogObaserver(adapter);
-//    stormmove->setLogObaserver(adapter);
-
-//    map->getCell(3, 2).setEvent(sun);
-//    map->getCell(3, 3).setEvent(well);
-//    map->getCell(4, 5).setEvent(part);
-//    map->getCell(1, 6).setEvent(platform);
-//    map->getCell(1, 0).setEvent(storm);
-//    map->getCell(5, 1).setEvent(stormmove);
 
     sf::RenderWindow window(sf::VideoMode(1000, 1000), "Game");
 
@@ -110,14 +87,26 @@ void Game::start() {
 }
 
 Game::~Game() {
-    delete map;
     delete status_game;
     delete win;
     delete gameover;
     delete filelog;
     delete console;
     delete adapter;
+}
 
+void Game::load() {
+    auto field = saver_manager.load(&player, adapter, win, &configurator);
+    if (field == nullptr) {
+        return;
+    }
+    delete map;
+    map = field;
+    playerController->changeMap(map);
+}
+
+void Game::save() {
+    saver_manager.save(*map, player);
 }
 
 

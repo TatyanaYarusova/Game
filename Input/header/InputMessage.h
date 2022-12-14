@@ -11,7 +11,10 @@ enum InputCommand{ // убрала слово class
     SetGameLevel,
     SetPlayerRole,
     SetOption,
-    SetLevel
+    SetLevel,
+
+    Save,
+    Load
 };
 
 struct InputMessage{

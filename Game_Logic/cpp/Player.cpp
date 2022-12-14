@@ -23,6 +23,7 @@ Player::Player(int name):role(name) {
 
 void Player::setCountPart() {
     this->count_part++;
+    std::cout<<"You found the part. You have "<<count_part<<" part.\n";
 }
 
 int Player::getCountPart() {
@@ -36,5 +37,9 @@ void Player::setWater(int water) {
 
 int Player::getWater() {
     return this->water;
+}
+
+void Player::setCountPart(int new_count_part) {
+    count_part = new_count_part;
 }
 

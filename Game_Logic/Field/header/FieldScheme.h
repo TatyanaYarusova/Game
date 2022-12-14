@@ -2,20 +2,23 @@
 #define GAME_FIELDSCHEME_H
 
 #include <vector>
+#include <string>
 
-enum class Type{
+enum class Type {
     open,
     sun,
     storm,
     well,
     part,
-    storm_move,
     platform,
     close,
-    player
+    player,
 };
-struct FieldScheme{
+
+struct FieldScheme {
     std::vector<std::vector<Type>> scheme;
     int count_part;
+    explicit operator std::string() const;
 };
+
 #endif //GAME_FIELDSCHEME_H

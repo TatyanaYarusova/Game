@@ -3,12 +3,18 @@
 
 #include "../../header/FieldScheme.h"
 
-template<int Count, int X, int Y>
+template<int Count>
 class RulePlatform {
 public:
     void update(FieldScheme& scheme) {
-        scheme.scheme[X][Y] = Type::platform;
-        scheme.count_part = Count;
+        int x = rand() % scheme.scheme[0].size();
+        int y = rand() % scheme.scheme[0].size();
+        while(scheme.scheme[x][y] != Type::open){
+            x = rand() % scheme.scheme[0].size();
+            y= rand() % scheme.scheme[0].size();
+        }
+            scheme.scheme[x][y] = Type::platform;
+            scheme.count_part = Count;
     }
 };
 

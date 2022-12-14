@@ -23,6 +23,12 @@ void KeyboardReader::process(sf::Event event) {
         if(keyboardCommand == this->commands["Down"]){
             message.command = InputCommand::MoveDown;
         }
+        if(keyboardCommand == this->commands["Save"]){
+            message.command = InputCommand::Save;
+        }
+        if(keyboardCommand == this->commands["Load"]){
+            message.command = InputCommand::Load;
+        }
 //        switch (event.key.code) {
 //            case sf::Keyboard::Left:
 //            case this->commands.at("Left"):

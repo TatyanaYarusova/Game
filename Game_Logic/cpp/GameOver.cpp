@@ -8,6 +8,7 @@ void GameOver::update() {
     if(player->getWater() <= 0) {
         this->notify_log(LogMessage{"You are loss!(", Level::Status});
         this->notify();
+        std::cout<<"You are loss!(\n";
     }
 
 }

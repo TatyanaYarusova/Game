@@ -3,11 +3,7 @@
 #include "../Strategy/header/Level_second.h"
 #include "../Strategy/header/Level_other.h"
 
-#include "../../../Event/header/SunEvent.h"
-#include "../../../Event/header/WellEvent.h"
-#include "../../../Event/header/StormEvent.h"
-#include "../../../Event/header/PlatfotmEvent.h"
-#include "../../../Event/header/PartEvent.h"
+
 
 void FieldConfigurator::set_strategy(IStrategy* strategy) {
      this->strategy = strategy;
@@ -37,43 +33,57 @@ void FieldConfigurator::set_scheme() {
 
 Field* FieldConfigurator::configurate(Player* player, Adapter* adapter, Win* win) {
     this->set_scheme();
-    int size = scheme.scheme.size();
-    this->map = new Field(size, size);
-    auto sun = new SunEvent(player);
-    auto well = new WellEvent(player);
-    auto storm = new StormEvent(map);
-    auto platform = new PlatformEvent(player);
-    auto part = new PartEvent(player);
+    return configurate(scheme, player, adapter, win);
+}
 
+FieldConfigurator::~FieldConfigurator() {
+    delete sun;
+    delete well;
+    delete storm;
+    delete platform;
+    delete part;
+    delete map;
+    delete strategy;
+}
+
+Field* FieldConfigurator::configurate(FieldScheme& f_scheme, Player* player, Adapter* adapter, Win* win) {
+    int size = f_scheme.scheme.size();
+    this->map = new Field(size, size);
+    sun = new SunEvent(player);
+    well = new WellEvent(player);
+    storm = new StormEvent(map);
+    platform = new PlatformEvent(player);
+    part = new PartEvent(player);
+    map->setCountPart(f_scheme.count_part);
 
     for(int x = 0; x < size; x++){
         for(int y = 0; y < size; y ++){
-            switch(scheme.scheme[y][x]){
+            switch(f_scheme.scheme[y][x]){
                 case Type::close:
-                    this->map->getCell(y,x).setPassability(false);
+                    this->map->getCell(x, y).setPassability(false);
                     break;
                 case Type::sun:
-                    this->map->getCell(y,x).setEvent(sun);
+                    this->map->getCell(x, y).setEvent(sun);
                     break;
                 case Type::well:
-                    this->map->getCell(y,x).setEvent(well);
+                    this->map->getCell(x, y).setEvent(well);
                     break;
                 case Type::storm:
-                    this->map->getCell(y,x).setEvent(storm);
+                    this->map->getCell(x, y).setEvent(storm);
                     storm->setLogObaserver(adapter);
                     break;
                 case Type::platform:
-                    platform->setCount(scheme.count_part);
+                    platform->setCount(f_scheme.count_part);
                     platform->setObserver(win);
                     platform->setLogObaserver(adapter);
-                    this->map->getCell(y,x).setEvent(platform);
+                    this->map->getCell(x, y).setEvent(platform);
                     break;
                 case Type::part:
                     part->setLogObaserver(adapter);
-                    this->map->getCell(y,x).setEvent(part);
+                    this->map->getCell(x, y).setEvent(part);
                     break;
                 case Type::player:
-                    this->map->setPlayerPos(y,x);
+                    this->map->setPlayerPos(x, y);
                     break;
                 default:
                     break;

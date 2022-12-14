@@ -12,8 +12,8 @@ private:
         rule.update(fieldScheme);
     }
 public:
-    FieldScheme generate(){
-        FieldScheme fieldScheme;
+    FieldScheme generate(FieldScheme& fieldScheme){
+        //FieldScheme fieldScheme;
         (applyRule<Rules>(fieldScheme), ...);
         return fieldScheme;
     };

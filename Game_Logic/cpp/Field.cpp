@@ -72,5 +72,13 @@ void Field::setPlayerPos(int x, int y) {
     player_pos.y = y;
 }
 
+int Field::getCountPart() const {
+    return count_part;
+}
+
+void Field::setCountPart(int countPart) {
+    count_part = countPart;
+}
+
 
 

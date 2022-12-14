@@ -8,14 +8,13 @@
 class Level_first : public IStrategy{
 private:
     FieldScheme scheme;
-    LevelGenerator<RuleSizeField<7,7>,
-                   RulePlayerPosition<0, 0>,
-                   RulePlatform<1, 5, 5>,
-                   RulePart<3>,
-                   RuleWalls<10>,
+    LevelGenerator<RulePlayerPosition<1>,
+                   RulePlatform<1>,
                    RuleSun<1>,
-                   RuleWell<2>,
-                   RuleStorm<3>
+                   RulePart<1>,
+                   RuleWalls<5>,
+                   RuleWell<3>,
+                   RuleStorm<4>
                    > generator;
 public:
     FieldScheme generate() override;

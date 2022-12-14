@@ -20,25 +20,26 @@
 #include "../../Loger/header/FileLogger.h"
 #include "../../Loger/header/ConsoleLogger.h"
 #include "../../Loger/header/Adapter.h"
+#include "../Saver/header/SaverManager.h"
 #include <SFML/Graphics.hpp>
 
 class Game {
 private:
     Field* map;
+    Player player;
+    PlayerController* playerController;
     Status_game* status_game;
     Win* win;
     GameOver* gameover;
     FileLogger* filelog;
     ConsoleLogger* console;
     Adapter* adapter;
-    StormEvent* storm;
-    SunEvent* sun;
-    WellEvent* well;
-    PartEvent* part;
-    PlatformEvent* platform;
-    StormMoveEvent* stormmove;
+    SaverManager saver_manager;
+    FieldConfigurator configurator;
 public:
     void start();
+    void load();
+    void save();
     ~Game();
 };
 

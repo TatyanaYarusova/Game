@@ -7,13 +7,12 @@
 class Level_second : public IStrategy{
 private:
     FieldScheme scheme;
-    LevelGenerator<RuleSizeField<10, 10>,
-            RulePlayerPosition<5, 5>,
-            RulePlatform<3, 1, 1>,
-            RulePart<5>,
-            RuleWalls<20>,
-            RuleSun<3>,
+    LevelGenerator<RulePlayerPosition<1>,
+            RulePlatform<3>,
             RuleWell<1>,
+            RulePart<3>,
+            RuleWalls<20>,
+            RuleSun<6>,
             RuleStorm<5>
             > generator;
 public:
